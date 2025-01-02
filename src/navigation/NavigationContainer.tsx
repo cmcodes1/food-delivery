@@ -1,7 +1,8 @@
 import {createStaticNavigation} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import * as React from 'react';
-import LoginScreen from '../screens/LoginScreen';
+import LoginScreen from '../screens/LoginScreen/LoginScreen';
+import HomeScreen from '../screens/HomeScreen/HomeScreen';
 
 const RootStack = createNativeStackNavigator({
   initialRouteName: 'LoginScreen',
@@ -11,9 +12,9 @@ const RootStack = createNativeStackNavigator({
   screens: {
     LoginScreen: {
       screen: LoginScreen,
-      // options: {
-      //   title: 'Overview',
-      // },
+    },
+    HomeScreen: {
+      screen: HomeScreen,
     },
   },
 });

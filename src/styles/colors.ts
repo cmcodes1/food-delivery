@@ -4,8 +4,13 @@ const colors = {
   bgTextInput: '#F0F5FA',
   labelDark: '#32343E',
   labelGrey: '#7E8A97',
+  labelLightGrey: '#676767',
   labelDarkGrey: '#646982',
   labelPrimary: '#FF7622',
+  bgBlackRussian: '#181C2E',
+  bgSolitude: '#ECF0F4',
+  nero: '#1E1D1D',
+  dimGrey: '#676767',
 };
 
 export default colors;

@@ -1,17 +1,35 @@
+import {
+  NavigationProp,
+  NavigationState,
+  useNavigation,
+} from '@react-navigation/native';
 import * as React from 'react';
 import {
-  View,
+  ScrollView,
   Text,
   TextInput,
   TouchableOpacity,
-  ScrollView,
+  View,
 } from 'react-native';
-import styles from './styles';
-import Spacer from '../components/Spacer';
-import icons from '../styles/icons';
 import {SvgXml} from 'react-native-svg';
+import Spacer from '../../components/Spacer';
+import icons from '../../styles/icons';
+import styles from './styles';
+
+type NavigationPropType = Omit<
+  NavigationProp<ReactNavigation.RootParamList>,
+  'getState'
+> & {
+  getState(): NavigationState | undefined;
+};
 
 export default function LoginScreen() {
+  const navigation: NavigationPropType = useNavigation();
+
+  const handleLogin = () => {
+    navigation.navigate('HomeScreen');
+  };
+
   return (
     <ScrollView>
       <View style={styles.root}>
@@ -57,7 +75,7 @@ export default function LoginScreen() {
             </Text>
           </View>
           <Spacer height={24} />
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={handleLogin}>
             <Text style={styles.buttonText}>LOG IN</Text>
           </TouchableOpacity>
           <Spacer height={24} />

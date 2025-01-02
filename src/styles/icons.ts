@@ -22,6 +22,27 @@ const icons = {
 <path d="M35.125 20C33.972 20.067 32.6483 20.7093 31.8613 21.5273C31.1503 22.2713 30.5894 23.3763 30.8184 24.4453C32.0714 24.4783 33.329 23.8193 34.082 22.9863C34.785 22.2073 35.318 21.12 35.125 20ZM35.1934 24.4434C33.3844 24.4434 32.628 25.5547 31.375 25.5547C30.086 25.5547 28.9077 24.5137 27.3477 24.5137C25.2257 24.5147 22 26.4803 22 31.1113C22 35.3243 25.8177 40 27.9727 40C29.2817 40.013 29.599 39.177 31.375 39.168C33.153 39.155 33.5367 40.011 34.8477 40C36.3237 39.989 37.4764 38.367 38.3184 37.082C38.9224 36.162 39.1707 35.6923 39.6387 34.6523C36.1657 33.7723 35.4747 28.1717 39.6387 27.0137C38.8527 25.6727 36.5584 24.4434 35.1934 24.4434Z" fill="white"/>
 </svg>
 `,
+  menu: `<svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 13H11" stroke="#181C2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1 7L17 7" stroke="#181C2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1 1L7 1" stroke="#181C2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`,
+  chevronDown: `<svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.76408 6.19763C4.56396 6.44521 4.18649 6.44521 3.98637 6.19762L0.378303 1.73381C0.114016 1.40684 0.346736 0.919498 0.767161 0.919498L7.98329 0.919498C8.40371 0.919498 8.63643 1.40684 8.37214 1.73381L4.76408 6.19763Z" fill="#181C2E"/>
+</svg>
+`,
+  cart: `<svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 0.999756L1 4.99976V18.9998C1 19.5302 1.21071 20.0389 1.58579 20.414C1.96086 20.789 2.46957 20.9998 3 20.9998H17C17.5304 20.9998 18.0391 20.789 18.4142 20.414C18.7893 20.0389 19 19.5302 19 18.9998V4.99976L16 0.999756H4Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1 4.99976H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 8.99976C14 10.0606 13.5786 11.078 12.8284 11.8282C12.0783 12.5783 11.0609 12.9998 10 12.9998C8.93913 12.9998 7.92172 12.5783 7.17157 11.8282C6.42143 11.078 6 10.0606 6 8.99976" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`,
+  search: `<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.66652 14.333C11.3483 14.333 14.333 11.3483 14.333 7.66652C14.333 3.9847 11.3483 1 7.66652 1C3.9847 1 1 3.9847 1 7.66652C1 11.3483 3.9847 14.333 7.66652 14.333Z" stroke="#A0A5BA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.9999 15.9999L12.375 12.375" stroke="#A0A5BA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`,
 };
 
 export default icons;
