@@ -11,6 +11,8 @@ const colors = {
   bgSolitude: '#ECF0F4',
   nero: '#1E1D1D',
   dimGrey: '#676767',
+  nightRider: '#333333',
+  salomie: '#FFD27C',
 };
 
 export default colors;

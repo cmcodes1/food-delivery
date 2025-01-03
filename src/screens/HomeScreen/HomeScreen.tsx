@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {ScrollView, Text, TextInput, View} from 'react-native';
+import {Image, ScrollView, Text, TextInput, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import Spacer from '../../components/Spacer';
 import icons from '../../styles/icons';
@@ -42,12 +42,139 @@ export default function HomeScreen() {
           <Spacer width={12} />
           <TextInput
             placeholder="Search dishes, restaurants"
-            style={styles.placeholder}
-            autoCorrect={false}
-            secureTextEntry={true}
+            style={styles.searchInput}
           />
         </View>
         <Spacer height={32} />
+        <View style={[styles.row, styles.spaceBetween]}>
+          <Text style={styles.textDarkBig}>All Categories</Text>
+          <View style={[styles.row, styles.alignCenter]}>
+            <Text style={styles.textDark}>See All</Text>
+            <Spacer width={10} />
+            <SvgXml xml={icons.chevronRight} />
+          </View>
+        </View>
+        <Spacer height={20} />
+        <ScrollView horizontal={true}>
+          <View style={[styles.row, styles.alignCenter]}>
+            <View
+              style={[
+                styles.categoryContainer,
+                styles.selectedCategoryContainer,
+              ]}>
+              <View style={[styles.row, styles.alignCenter]}>
+                <Image
+                  source={require('../../assets/images/allFood.jpg')}
+                  style={styles.food}
+                  resizeMode="contain"
+                />
+                <Spacer width={12} />
+                <Text style={styles.textDarkBold}>All</Text>
+              </View>
+            </View>
+            <Spacer width={20} />
+            <View style={styles.categoryContainer}>
+              <View style={[styles.row, styles.alignCenter]}>
+                <Image
+                  source={require('../../assets/images/hotDog.jpg')}
+                  style={styles.food}
+                  resizeMode="contain"
+                />
+                <Spacer width={12} />
+                <Text style={styles.textDarkBold}>Hot Dog</Text>
+              </View>
+            </View>
+            <Spacer width={20} />
+            <View style={styles.categoryContainer}>
+              <View style={[styles.row, styles.alignCenter]}>
+                <Image
+                  source={require('../../assets/images/burger.jpg')}
+                  style={styles.food}
+                  resizeMode="contain"
+                />
+                <Spacer width={12} />
+                <Text style={styles.textDarkBold}>Burger</Text>
+              </View>
+            </View>
+            <Spacer width={20} />
+          </View>
+        </ScrollView>
+        <Spacer height={32} />
+        <View style={[styles.row, styles.spaceBetween]}>
+          <Text style={styles.textDarkBig}>Open Restaurants</Text>
+          <View style={[styles.row, styles.alignCenter]}>
+            <Text style={styles.textDark}>See All</Text>
+            <Spacer width={10} />
+            <SvgXml xml={icons.chevronRight} />
+          </View>
+        </View>
+        <Spacer height={20} />
+        <View>
+          <Image
+            source={require('../../assets/images/restaurant1.png')}
+            style={styles.restaurantImage}
+            resizeMode="contain"
+          />
+          <Spacer height={8} />
+          <Text style={styles.textBlackBig}>Rose Garden Restaurant</Text>
+          <Spacer height={5} />
+          <Text style={styles.textLightGrey}>
+            Burger - Chiken - Riche - Wings
+          </Text>
+          <Spacer height={14} />
+          <View style={styles.row}>
+            <View style={[styles.row, styles.alignCenter]}>
+              <SvgXml xml={icons.rating} />
+              <Spacer width={4} />
+              <Text style={styles.textBlackBold}>4.7</Text>
+            </View>
+            <Spacer width={24} />
+            <View style={[styles.row, styles.alignCenter]}>
+              <SvgXml xml={icons.delivery} />
+              <Spacer width={4} />
+              <Text style={styles.textBlack}>Free</Text>
+            </View>
+            <Spacer width={24} />
+            <View style={[styles.row, styles.alignCenter]}>
+              <SvgXml xml={icons.time} />
+              <Spacer width={4} />
+              <Text style={styles.textBlack}>20 min</Text>
+            </View>
+          </View>
+        </View>
+        <Spacer height={20} />
+        <View>
+          <Image
+            source={require('../../assets/images/restaurant2.png')}
+            style={styles.restaurantImage}
+            resizeMode="contain"
+          />
+          <Spacer height={8} />
+          <Text style={styles.textBlackBig}>American Spicy Burger Shop</Text>
+          <Spacer height={5} />
+          <Text style={styles.textLightGrey}>Burger - Chiken - Wings</Text>
+          <Spacer height={14} />
+          <View style={styles.row}>
+            <View style={[styles.row, styles.alignCenter]}>
+              <SvgXml xml={icons.rating} />
+              <Spacer width={4} />
+              <Text style={styles.textBlackBold}>4.3</Text>
+            </View>
+            <Spacer width={24} />
+            <View style={[styles.row, styles.alignCenter]}>
+              <SvgXml xml={icons.delivery} />
+              <Spacer width={4} />
+              <Text style={styles.textBlack}>Free</Text>
+            </View>
+            <Spacer width={24} />
+            <View style={[styles.row, styles.alignCenter]}>
+              <SvgXml xml={icons.time} />
+              <Spacer width={4} />
+              <Text style={styles.textBlack}>30 min</Text>
+            </View>
+          </View>
+        </View>
+        <Spacer height={20} />
       </View>
     </ScrollView>
   );

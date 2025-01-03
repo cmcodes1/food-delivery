@@ -2,7 +2,6 @@ import {StyleSheet} from 'react-native';
 import colors from '../../styles/colors';
 
 const styles = StyleSheet.create({
-  // HomeScreen
   root: {
     flex: 1,
     backgroundColor: colors.light,
@@ -79,90 +78,60 @@ const styles = StyleSheet.create({
     height: 62,
     borderRadius: 10,
   },
-  placeholder: {
+  searchInput: {
     color: colors.dimGrey,
     fontSize: 14,
     fontWeight: 400,
   },
-
-  // old styles from LoginScreen
-  subheaderText: {
-    color: colors.light,
+  textDarkBig: {
+    color: colors.labelDark,
+    fontSize: 20,
+    fontWeight: 400,
+  },
+  textDark: {
+    color: colors.nightRider,
     fontSize: 16,
     fontWeight: 400,
-    textAlign: 'center',
-    marginTop: 3,
   },
-  labelDark: {
+  categoryContainer: {
+    padding: 8,
+    height: 60,
+    borderRadius: 50,
+    borderWidth: 0.2,
+  },
+  selectedCategoryContainer: {
+    backgroundColor: colors.salomie,
+  },
+  food: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+  },
+  textDarkBold: {
     color: colors.labelDark,
-    fontSize: 13,
-    fontWeight: 400,
-  },
-  body: {
-    backgroundColor: colors.light,
-    height: '120%',
-    padding: 24,
-    borderTopLeftRadius: 24,
-    borderTopRightRadius: 24,
-  },
-  forgotPasswordContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  rememberMeContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  checkbox: {
-    marginRight: 10,
-  },
-  labelGrey: {
-    color: colors.labelGrey,
-    textAlign: 'left',
-  },
-  labelPrimary: {
-    color: colors.labelPrimary,
     fontSize: 14,
-    textAlign: 'right',
+    fontWeight: 700,
   },
-  button: {
-    height: 62,
+  restaurantImage: {
     width: '100%',
-    backgroundColor: colors.labelPrimary,
-    borderRadius: 12,
-    justifyContent: 'center',
-    alignSelf: 'center',
+    height: 140,
+    borderRadius: 24,
+    borderWidth: 0.2,
   },
-  buttonText: {
-    color: colors.light,
-    fontSize: 14,
-    fontWeight: 700,
-    textAlign: 'center',
-  },
-  signupContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    alignSelf: 'center',
-  },
-  labelDarkGrey: {
-    color: colors.labelDarkGrey,
-    fontSize: 13,
+  textBlackBig: {
+    color: colors.bgBlackRussian,
+    fontSize: 20,
     fontWeight: 400,
   },
-  labelPrimaryBold: {
-    color: colors.labelPrimary,
-    fontSize: 14,
+  textBlackBold: {
+    color: colors.bgBlackRussian,
+    fontSize: 16,
     fontWeight: 700,
-    textAlign: 'right',
   },
-  textAlignCenter: {
-    textAlign: 'center',
-  },
-  socialContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    alignSelf: 'center',
+  textBlack: {
+    color: colors.bgBlackRussian,
+    fontSize: 14,
+    fontWeight: 400,
   },
 });
 
