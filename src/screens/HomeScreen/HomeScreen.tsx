@@ -1,11 +1,46 @@
+import {
+  NavigationProp,
+  NavigationState,
+  useNavigation,
+} from '@react-navigation/native';
 import * as React from 'react';
-import {Image, ScrollView, Text, TextInput, View} from 'react-native';
+import {
+  Image,
+  ScrollView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import Spacer from '../../components/Spacer';
 import icons from '../../styles/icons';
 import styles from '../HomeScreen/styles';
 
+type NavigationPropType = Omit<
+  NavigationProp<typeof RootStackParamList>,
+  'getState'
+> & {
+  getState(): NavigationState | undefined;
+};
+
 export default function HomeScreen() {
+  const navigation: NavigationPropType = useNavigation();
+  const handleNavigation = (
+    restaurantImage: string,
+    restaurantName: string,
+    rating: string,
+    deliveryCharge: string,
+    time: string,
+  ) => {
+    navigation.navigate('RestaurantScreen', {
+      restaurantImage: restaurantImage,
+      restaurantName: restaurantName,
+      rating: rating,
+      deliveryCharge: deliveryCharge,
+      time: time,
+    });
+  };
   return (
     <ScrollView>
       <View style={styles.root}>
@@ -109,7 +144,16 @@ export default function HomeScreen() {
           </View>
         </View>
         <Spacer height={20} />
-        <View>
+        <TouchableOpacity
+          onPress={() =>
+            handleNavigation(
+              '../../assets/images/restaurant1.png',
+              'Rose Garden Restaurant',
+              '4.7',
+              'Free',
+              '20 min',
+            )
+          }>
           <Image
             source={require('../../assets/images/restaurant1.png')}
             style={styles.restaurantImage}
@@ -141,9 +185,18 @@ export default function HomeScreen() {
               <Text style={styles.textBlack}>20 min</Text>
             </View>
           </View>
-        </View>
+        </TouchableOpacity>
         <Spacer height={20} />
-        <View>
+        <TouchableOpacity
+          onPress={() =>
+            handleNavigation(
+              '../../assets/images/restaurant2.png',
+              'American Spicy Burger Shop',
+              '4.3',
+              'Free',
+              '30 min',
+            )
+          }>
           <Image
             source={require('../../assets/images/restaurant2.png')}
             style={styles.restaurantImage}
@@ -173,7 +226,7 @@ export default function HomeScreen() {
               <Text style={styles.textBlack}>30 min</Text>
             </View>
           </View>
-        </View>
+        </TouchableOpacity>
         <Spacer height={20} />
       </View>
     </ScrollView>

@@ -13,6 +13,9 @@ const colors = {
   dimGrey: '#676767',
   nightRider: '#333333',
   salomie: '#FFD27C',
+  mischka: '#A0A5BA',
+  carrotOrange: '#F58D1D',
+  whisper: '#EDEDED',
 };
 
 export default colors;

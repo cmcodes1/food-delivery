@@ -60,6 +60,21 @@ const icons = {
 <path d="M11 5V11L15 13" stroke="#FF7622" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 `,
+  chevronLeft: `<svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 11L1 6L6 1" stroke="#181C2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`,
+  kebabMenu: `<svg width="19" height="5" viewBox="0 0 19 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.40942 3.32568C9.96171 3.32568 10.4094 2.87797 10.4094 2.32568C10.4094 1.7734 9.96171 1.32568 9.40942 1.32568C8.85714 1.32568 8.40942 1.7734 8.40942 2.32568C8.40942 2.87797 8.85714 3.32568 9.40942 3.32568Z" stroke="#181C2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.4094 3.32568C16.9617 3.32568 17.4094 2.87797 17.4094 2.32568C17.4094 1.7734 16.9617 1.32568 16.4094 1.32568C15.8571 1.32568 15.4094 1.7734 15.4094 2.32568C15.4094 2.87797 15.8571 3.32568 16.4094 3.32568Z" stroke="#181C2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2.40942 3.32568C2.96171 3.32568 3.40942 2.87797 3.40942 2.32568C3.40942 1.7734 2.96171 1.32568 2.40942 1.32568C1.85714 1.32568 1.40942 1.7734 1.40942 2.32568C1.40942 2.87797 1.85714 3.32568 2.40942 3.32568Z" stroke="#181C2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`,
+  plus: `<svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.40356 1V10.5657" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1 5.78296H11.8081" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`,
 };
 
 export default icons;
