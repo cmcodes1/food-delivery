@@ -1,8 +1,4 @@
-import {
-  NavigationProp,
-  NavigationState,
-  useNavigation,
-} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import * as React from 'react';
 import {
   ScrollView,
@@ -15,13 +11,7 @@ import {SvgXml} from 'react-native-svg';
 import Spacer from '../../components/Spacer';
 import icons from '../../styles/icons';
 import styles from './styles';
-
-type NavigationPropType = Omit<
-  NavigationProp<ReactNavigation.RootParamList>,
-  'getState'
-> & {
-  getState(): NavigationState | undefined;
-};
+import {NavigationPropType} from '../../navigation/types';
 
 export default function LoginScreen() {
   const navigation: NavigationPropType = useNavigation();

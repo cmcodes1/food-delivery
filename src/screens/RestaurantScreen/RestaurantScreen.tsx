@@ -5,6 +5,7 @@ import {SvgXml} from 'react-native-svg';
 import Spacer from '../../components/Spacer';
 import icons from '../../styles/icons';
 import styles from '../RestaurantScreen/styles';
+import {NavigationPropType} from '../../navigation/types';
 
 type RestaurantScreenProps = {
   route: {
@@ -20,11 +21,20 @@ type RestaurantScreenProps = {
 
 export default function RestaurantScreen({route}: RestaurantScreenProps) {
   const {restaurantName, rating, deliveryCharge, time} = route.params;
-
-  const navigation = useNavigation();
+  const navigation: NavigationPropType = useNavigation();
 
   const handleBack = () => {
     navigation.goBack();
+  };
+
+  const handleNavigation = (itemName: string) => {
+    navigation.navigate('ItemDetailsScreen', {
+      itemName,
+      restaurantName,
+      rating,
+      deliveryCharge,
+      time,
+    });
   };
 
   return (
@@ -103,7 +113,9 @@ export default function RestaurantScreen({route}: RestaurantScreenProps) {
         <Text style={styles.textBlackHuge}>Burger (10)</Text>
         <Spacer height={20} />
         <View style={[styles.row, styles.spaceBetween]}>
-          <TouchableOpacity style={styles.foodContainer}>
+          <TouchableOpacity
+            style={styles.foodContainer}
+            onPress={() => handleNavigation('Burger Ferguson')}>
             <Image
               source={require('../../assets/images/burger.jpg')}
               style={styles.foodImage}
@@ -121,7 +133,9 @@ export default function RestaurantScreen({route}: RestaurantScreenProps) {
               </TouchableOpacity>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.foodContainer}>
+          <TouchableOpacity
+            style={styles.foodContainer}
+            onPress={() => handleNavigation("Rockin' Burgers")}>
             <Image
               source={require('../../assets/images/burger.jpg')}
               style={styles.foodImage}

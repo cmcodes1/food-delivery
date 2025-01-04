@@ -1,8 +1,4 @@
-import {
-  NavigationProp,
-  NavigationState,
-  useNavigation,
-} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import * as React from 'react';
 import {
   Image,
@@ -16,13 +12,7 @@ import {SvgXml} from 'react-native-svg';
 import Spacer from '../../components/Spacer';
 import icons from '../../styles/icons';
 import styles from '../HomeScreen/styles';
-
-type NavigationPropType = Omit<
-  NavigationProp<typeof RootStackParamList>,
-  'getState'
-> & {
-  getState(): NavigationState | undefined;
-};
+import {NavigationPropType} from '../../navigation/types';
 
 export default function HomeScreen() {
   const navigation: NavigationPropType = useNavigation();

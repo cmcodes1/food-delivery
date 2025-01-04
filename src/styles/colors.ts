@@ -16,6 +16,8 @@ const colors = {
   mischka: '#A0A5BA',
   carrotOrange: '#F58D1D',
   whisper: '#EDEDED',
+  chablish: '#FFEBE4',
+  payneGrey: '#41414F',
 };
 
 export default colors;
