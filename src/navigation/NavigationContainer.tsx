@@ -8,6 +8,7 @@ import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import ItemDetailsScreen from '../screens/ItemDetailsScreen/ItemDetailsScreen';
 import LoginScreen from '../screens/LoginScreen/LoginScreen';
 import RestaurantScreen from '../screens/RestaurantScreen/RestaurantScreen';
+import CartScreen from '../screens/CartScreen/CartScreen';
 
 const RootStack = createNativeStackNavigator({
   initialRouteName: 'LoginScreen',
@@ -26,6 +27,9 @@ const RootStack = createNativeStackNavigator({
     },
     ItemDetailsScreen: {
       screen: ItemDetailsScreen,
+    },
+    CartScreen: {
+      screen: CartScreen,
     },
   },
 });

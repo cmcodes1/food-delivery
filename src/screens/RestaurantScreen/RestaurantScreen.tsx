@@ -3,9 +3,9 @@ import * as React from 'react';
 import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import Spacer from '../../components/Spacer';
+import {NavigationPropType} from '../../navigation/types';
 import icons from '../../styles/icons';
 import styles from '../RestaurantScreen/styles';
-import {NavigationPropType} from '../../navigation/types';
 
 type RestaurantScreenProps = {
   route: {

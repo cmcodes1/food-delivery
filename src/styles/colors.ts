@@ -18,6 +18,7 @@ const colors = {
   whisper: '#EDEDED',
   chablish: '#FFEBE4',
   payneGrey: '#41414F',
+  blackRock: '#2A2A39',
 };
 
 export default colors;

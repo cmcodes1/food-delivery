@@ -10,9 +10,9 @@ import {
 } from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import Spacer from '../../components/Spacer';
+import {NavigationPropType} from '../../navigation/types';
 import icons from '../../styles/icons';
 import styles from '../HomeScreen/styles';
-import {NavigationPropType} from '../../navigation/types';
 
 export default function HomeScreen() {
   const navigation: NavigationPropType = useNavigation();
