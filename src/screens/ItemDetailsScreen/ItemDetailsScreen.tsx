@@ -50,7 +50,7 @@ export default function ItemDetailsScreen({route}: ItemDetailsScreenProps) {
           ]}>
           <TouchableOpacity
             style={[styles.navContainer, styles.center]}
-            onPress={() => handleBack()}>
+            onPress={handleBack}>
             <SvgXml xml={icons.chevronLeft} />
           </TouchableOpacity>
           <View style={[styles.navContainer, styles.center]}>
@@ -150,7 +150,7 @@ export default function ItemDetailsScreen({route}: ItemDetailsScreenProps) {
           <Spacer height={24} />
           <TouchableOpacity
             style={[styles.cartButton, styles.center]}
-            onPress={() => handleNavigation()}>
+            onPress={handleNavigation}>
             <Text style={styles.textLightBold}>ADD TO CART</Text>
           </TouchableOpacity>
         </View>

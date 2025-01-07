@@ -32,7 +32,7 @@ export default function CartScreen() {
           <View style={[styles.row, styles.spaceBetween, styles.alignCenter]}>
             <TouchableOpacity
               style={[styles.navContainer, styles.center]}
-              onPress={() => handleBack()}>
+              onPress={handleBack}>
               <SvgXml xml={icons.chevronLeftLight} />
             </TouchableOpacity>
             <Text style={styles.textPrimaryLine}>EDIT ITEMS</Text>
