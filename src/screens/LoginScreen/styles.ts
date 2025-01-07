@@ -14,12 +14,14 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: colors.light,
+    fontFamily: 'Sen',
     fontSize: 30,
     fontWeight: 700,
     textAlign: 'center',
   },
   subheaderText: {
     color: colors.light,
+    fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 400,
     textAlign: 'center',
@@ -27,6 +29,7 @@ const styles = StyleSheet.create({
   },
   labelDark: {
     color: colors.labelDark,
+    fontFamily: 'Sen',
     fontSize: 13,
     fontWeight: 400,
   },
@@ -67,6 +70,7 @@ const styles = StyleSheet.create({
   },
   labelPrimary: {
     color: colors.labelPrimary,
+    fontFamily: 'Sen',
     fontSize: 14,
     textAlign: 'right',
   },
@@ -80,12 +84,14 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: colors.light,
+    fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 700,
     textAlign: 'center',
   },
   errorText: {
     color: colors.labelPrimary,
+    fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 700,
     textAlign: 'center',
@@ -97,11 +103,13 @@ const styles = StyleSheet.create({
   },
   labelDarkGrey: {
     color: colors.labelDarkGrey,
+    fontFamily: 'Sen',
     fontSize: 13,
     fontWeight: 400,
   },
   labelPrimaryBold: {
     color: colors.labelPrimary,
+    fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 700,
     textAlign: 'right',

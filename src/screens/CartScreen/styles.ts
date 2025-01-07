@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
   textPrimaryLine: {
     color: colors.labelPrimary,
     textDecorationLine: 'underline',
+    fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 400,
   },
@@ -43,11 +44,13 @@ const styles = StyleSheet.create({
   },
   textlightBig: {
     color: colors.light,
+    fontFamily: 'Sen',
     fontSize: 18,
     fontWeight: 400,
   },
   textlightBigBold: {
     color: colors.light,
+    fontFamily: 'Sen',
     fontSize: 20,
     fontWeight: 700,
   },
@@ -63,6 +66,7 @@ const styles = StyleSheet.create({
   },
   textLightBold: {
     color: colors.light,
+    fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 700,
   },
@@ -82,6 +86,7 @@ const styles = StyleSheet.create({
   },
   textLightGrey: {
     color: colors.mischka,
+    fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 400,
   },
@@ -100,6 +105,7 @@ const styles = StyleSheet.create({
   },
   textBlackHuge: {
     color: colors.bgBlackRussian,
+    fontFamily: 'Sen',
     fontSize: 30,
     fontWeight: 400,
   },
@@ -113,6 +119,7 @@ const styles = StyleSheet.create({
   },
   textLightSmallBold: {
     color: colors.light,
+    fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 700,
   },

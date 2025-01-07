@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
   },
   textBlackBig: {
     color: colors.bgBlackRussian,
+    fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 400,
   },
@@ -42,16 +43,19 @@ const styles = StyleSheet.create({
   },
   textLightGrey: {
     color: colors.mischka,
+    fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 400,
   },
   textBlackBold: {
     color: colors.bgBlackRussian,
+    fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 700,
   },
   textBlack: {
     color: colors.bgBlackRussian,
+    fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 400,
   },
@@ -69,11 +73,13 @@ const styles = StyleSheet.create({
   },
   textLight: {
     color: colors.light,
+    fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 400,
   },
   textBlackHuge: {
     color: colors.bgBlackRussian,
+    fontFamily: 'Sen',
     fontSize: 20,
     fontWeight: 400,
   },
@@ -89,11 +95,13 @@ const styles = StyleSheet.create({
   },
   textDarkBold: {
     color: colors.labelDark,
+    fontFamily: 'Sen',
     fontSize: 15,
     fontWeight: 700,
   },
   textDarkGrey: {
     color: colors.labelDarkGrey,
+    fontFamily: 'Sen',
     fontSize: 13,
     fontWeight: 400,
   },

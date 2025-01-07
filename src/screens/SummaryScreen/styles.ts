@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
   },
   textDarkBigBold: {
     color: colors.midnightExpress,
+    fontFamily: 'Sen',
     fontSize: 24,
     fontWeight: 700,
     marginBottom: 16,
@@ -29,12 +30,14 @@ const styles = StyleSheet.create({
   },
   textLightBold: {
     color: colors.light,
+    fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 700,
   },
   textBrightGrey: {
     color: colors.brightGrey,
     opacity: 0.6,
+    fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 400,
     textAlign: 'center',

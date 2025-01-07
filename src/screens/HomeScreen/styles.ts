@@ -31,11 +31,13 @@ const styles = StyleSheet.create({
   },
   textPrimaryBold: {
     color: colors.labelPrimary,
+    fontFamily: 'Sen',
     fontSize: 12,
     fontWeight: 700,
   },
   textLightGrey: {
     color: colors.labelLightGrey,
+    fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 400,
   },
@@ -58,12 +60,14 @@ const styles = StyleSheet.create({
   },
   textLightBold: {
     color: colors.light,
+    fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 700,
     textAlign: 'center',
   },
   headerText: {
     color: colors.nero,
+    fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 400,
   },
@@ -80,16 +84,19 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     color: colors.dimGrey,
+    fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 400,
   },
   textDarkBig: {
     color: colors.labelDark,
+    fontFamily: 'Sen',
     fontSize: 20,
     fontWeight: 400,
   },
   textDark: {
     color: colors.nightRider,
+    fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 400,
   },
@@ -109,6 +116,7 @@ const styles = StyleSheet.create({
   },
   textDarkBold: {
     color: colors.labelDark,
+    fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 700,
   },
@@ -120,16 +128,19 @@ const styles = StyleSheet.create({
   },
   textBlackBig: {
     color: colors.bgBlackRussian,
+    fontFamily: 'Sen',
     fontSize: 20,
     fontWeight: 400,
   },
   textBlackBold: {
     color: colors.bgBlackRussian,
+    fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 700,
   },
   textBlack: {
     color: colors.bgBlackRussian,
+    fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 400,
   },
