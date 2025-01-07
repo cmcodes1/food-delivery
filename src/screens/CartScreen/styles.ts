@@ -30,18 +30,17 @@ const styles = StyleSheet.create({
     backgroundColor: colors.blackRock,
     borderWidth: 0.2,
   },
-  editItems: {
+  textPrimaryLine: {
     color: colors.labelPrimary,
     textDecorationLine: 'underline',
     fontSize: 14,
     fontWeight: 400,
   },
-  itemIamge: {
+  itemImage: {
     width: 120,
     height: 120,
     borderRadius: 25,
   },
-  itemDetailsContainer: {},
   textlightBig: {
     color: colors.light,
     fontSize: 18,
@@ -79,8 +78,43 @@ const styles = StyleSheet.create({
     backgroundColor: colors.bgTextInput,
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
-    paddingVertical: 20,
-    paddingHorizontal: 24,
+    padding: 24,
+  },
+  textLightGrey: {
+    color: colors.mischka,
+    fontSize: 14,
+    fontWeight: 400,
+  },
+  deliveryAddress: {
+    height: 62,
+    paddingHorizontal: 12,
+    borderWidth: 0.2,
+    borderRadius: 10,
+    backgroundColor: colors.bgTextInput,
+    justifyContent: 'center',
+    marginBottom: 30,
+  },
+  inputDeliveryAddress: {
+    color: colors.labelDark,
+    opacity: 0.5,
+  },
+  textBlackHuge: {
+    color: colors.bgBlackRussian,
+    fontSize: 30,
+    fontWeight: 400,
+  },
+  textDecorationNone: {
+    textDecorationLine: 'none',
+  },
+  placeOrderButton: {
+    height: 62,
+    borderRadius: 12,
+    backgroundColor: colors.labelPrimary,
+  },
+  textLightSmallBold: {
+    color: colors.light,
+    fontSize: 14,
+    fontWeight: 700,
   },
 });
 
