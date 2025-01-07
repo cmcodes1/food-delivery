@@ -13,7 +13,7 @@ export default function SummaryScreen() {
             xml={icons.success}
             height={200}
             width={200}
-            style={[styles.successImage, styles.center, styles.alignCenter]}
+            style={[styles.successImage, styles.center]}
           />
           <Text style={styles.textDarkBigBold}>Congratulations!</Text>
           <Text style={styles.textBrightGrey}>
