@@ -1,5 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
-import * as React from 'react';
+import React, {useState} from 'react';
 import {
   Image,
   ScrollView,
@@ -9,12 +9,18 @@ import {
   View,
 } from 'react-native';
 import {SvgXml} from 'react-native-svg';
+import icons from '../../assets/icons';
 import Spacer from '../../components/Spacer';
 import {NavigationPropType} from '../../navigation/types';
-import icons from '../../assets/icons';
+import {getTotalPrice, handleQty} from '../../utils/utils';
 import styles from '../CartScreen/styles';
+import {FoodItem, Index} from '../ItemDetailsScreen/types';
+import {CartScreenRouteProp} from './types';
 
-export default function CartScreen() {
+export default function CartScreen({route}: {route: CartScreenRouteProp}) {
+  const [foodItems, setFoodItems] = useState(route.params.foodItems);
+  const [totalPrice, setTotalPrice] = useState(getTotalPrice(foodItems));
+
   const navigation: NavigationPropType = useNavigation();
 
   const handleBack = () => {
@@ -38,70 +44,74 @@ export default function CartScreen() {
             <Text style={styles.textPrimaryLine}>EDIT ITEMS</Text>
           </View>
           <Spacer height={24} />
-          <View style={[styles.row, styles.spaceBetween, styles.alignCenter]}>
-            <Image
-              source={require('../../assets/images/pizza.png')}
-              style={styles.itemImage}
-              resizeMode="contain"
-            />
-            <View>
-              <Text style={styles.textlightBig}>Pizza Calzone European</Text>
-              <Spacer height={10} />
-              <Text style={styles.textlightBigBold}>$64</Text>
-              <Spacer height={17} />
+          {foodItems.map((item: FoodItem, index: Index) => (
+            <View key={index}>
               <View
-                style={[styles.row, styles.alignCenter, styles.spaceBetween]}>
-                <Text style={[styles.textlightBig, styles.opacity50]}>14"</Text>
-                <View
-                  style={[
-                    styles.qtyContainer,
-                    styles.row,
-                    styles.spaceBetween,
-                    styles.alignCenter,
-                  ]}>
-                  <View style={styles.changeQtyButton}>
-                    <Text style={styles.textLightBold}>-</Text>
-                  </View>
-                  <Text style={styles.textLightBold}>2</Text>
-                  <View style={styles.changeQtyButton}>
-                    <Text style={styles.textLightBold}>+</Text>
+                style={[styles.row, styles.spaceBetween, styles.alignCenter]}>
+                <Image
+                  source={require('../../assets/images/pizza.png')}
+                  style={styles.itemImage}
+                  resizeMode="contain"
+                />
+                <View>
+                  <Text style={styles.textlightBig}>{item.itemName}</Text>
+                  <Spacer height={10} />
+                  <Text style={styles.textlightBigBold}>
+                    ${Number(item.price) * Number(item.qty)}
+                  </Text>
+                  <Spacer height={17} />
+                  <View
+                    style={[
+                      styles.row,
+                      styles.alignCenter,
+                      styles.spaceBetween,
+                    ]}>
+                    <Text style={[styles.textlightBig, styles.opacity50]}>
+                      {item.size}
+                    </Text>
+                    <View
+                      style={[
+                        styles.qtyContainer,
+                        styles.row,
+                        styles.spaceBetween,
+                        styles.alignCenter,
+                      ]}>
+                      <TouchableOpacity
+                        style={styles.changeQtyButton}
+                        onPress={() => {
+                          let updatedFoodItems = handleQty(
+                            foodItems,
+                            index,
+                            'decrement',
+                          );
+                          setFoodItems(updatedFoodItems);
+                          setTotalPrice(getTotalPrice(updatedFoodItems));
+                        }}>
+                        <Text style={styles.textLightBold}>-</Text>
+                      </TouchableOpacity>
+                      <Text style={styles.textLightBold}>{item.qty}</Text>
+                      <TouchableOpacity
+                        style={styles.changeQtyButton}
+                        onPress={() => {
+                          let updatedFoodItems = handleQty(
+                            foodItems,
+                            index,
+                            'increment',
+                          );
+                          setFoodItems(updatedFoodItems);
+                          setTotalPrice(getTotalPrice(updatedFoodItems));
+                        }}>
+                        <View style={styles.changeQtyButton}>
+                          <Text style={styles.textLightBold}>+</Text>
+                        </View>
+                      </TouchableOpacity>
+                    </View>
                   </View>
                 </View>
               </View>
+              <Spacer height={32} />
             </View>
-          </View>
-          <Spacer height={32} />
-          <View style={[styles.row, styles.spaceBetween, styles.alignCenter]}>
-            <Image
-              source={require('../../assets/images/pizza.png')}
-              style={styles.itemImage}
-              resizeMode="contain"
-            />
-            <View>
-              <Text style={styles.textlightBig}>Pizza Calzone European</Text>
-              <Text style={styles.textlightBigBold}>$32</Text>
-              <View
-                style={[styles.row, styles.alignCenter, styles.spaceBetween]}>
-                <Text style={[styles.textlightBig, styles.opacity50]}>14"</Text>
-                <View
-                  style={[
-                    styles.qtyContainer,
-                    styles.row,
-                    styles.spaceBetween,
-                    styles.alignCenter,
-                  ]}>
-                  <View style={styles.changeQtyButton}>
-                    <Text style={styles.textLightBold}>-</Text>
-                  </View>
-                  <Text style={styles.textLightBold}>1</Text>
-                  <View style={styles.changeQtyButton}>
-                    <Text style={styles.textLightBold}>+</Text>
-                  </View>
-                </View>
-              </View>
-            </View>
-          </View>
-          <Spacer height={32} />
+          ))}
         </View>
         <View style={styles.cartContainer}>
           <View style={[styles.row, styles.spaceBetween, styles.alignCenter]}>
@@ -120,7 +130,7 @@ export default function CartScreen() {
             <View style={[styles.row, styles.spaceBetween, styles.alignCenter]}>
               <Text style={styles.textLightGrey}>TOTAL:</Text>
               <Spacer width={12} />
-              <Text style={styles.textBlackHuge}>$96</Text>
+              <Text style={styles.textBlackHuge}>${totalPrice}</Text>
             </View>
             <View style={[styles.row, styles.alignCenter]}>
               <Text style={[styles.textPrimaryLine, styles.textDecorationNone]}>

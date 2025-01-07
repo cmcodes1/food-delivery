@@ -17,18 +17,16 @@ import styles from '../HomeScreen/styles';
 export default function HomeScreen() {
   const navigation: NavigationPropType = useNavigation();
   const handleNavigation = (
-    restaurantImage: string,
     restaurantName: string,
     rating: string,
     deliveryCharge: string,
     time: string,
   ) => {
     navigation.navigate('RestaurantScreen', {
-      restaurantImage: restaurantImage,
-      restaurantName: restaurantName,
-      rating: rating,
-      deliveryCharge: deliveryCharge,
-      time: time,
+      restaurantName,
+      rating,
+      deliveryCharge,
+      time,
     });
   };
   return (
@@ -136,13 +134,7 @@ export default function HomeScreen() {
         <Spacer height={20} />
         <TouchableOpacity
           onPress={() =>
-            handleNavigation(
-              '../../assets/images/restaurant1.png',
-              'Rose Garden Restaurant',
-              '4.7',
-              'Free',
-              '20 min',
-            )
+            handleNavigation('Rose Garden Restaurant', '4.7', 'Free', '20 min')
           }>
           <Image
             source={require('../../assets/images/restaurant1.png')}
@@ -180,7 +172,6 @@ export default function HomeScreen() {
         <TouchableOpacity
           onPress={() =>
             handleNavigation(
-              '../../assets/images/restaurant2.png',
               'American Spicy Burger Shop',
               '4.3',
               'Free',

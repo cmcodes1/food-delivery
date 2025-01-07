@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   successImage: {
-    marginTop: 200,
+    marginTop: 230,
     marginBottom: 32,
   },
   textDarkBigBold: {

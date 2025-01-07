@@ -1,41 +1,42 @@
 import {useNavigation} from '@react-navigation/native';
-import * as React from 'react';
+import React, {useState} from 'react';
 import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import Spacer from '../../components/Spacer';
 import {NavigationPropType} from '../../navigation/types';
 import icons from '../../assets/icons';
 import styles from '../ItemDetailsScreen/styles';
-
-type ItemDetailsScreenProps = {
-  route: {
-    params: {
-      itemName: string;
-      restaurantImage: string;
-      restaurantName: string;
-      rating: string;
-      deliveryCharge: string;
-      time: string;
-    };
-  };
-};
+import {ItemDetailsScreenProps} from './types';
 
 export default function ItemDetailsScreen({route}: ItemDetailsScreenProps) {
   const {itemName, restaurantName, rating, deliveryCharge, time} = route.params;
 
   const navigation: NavigationPropType = useNavigation();
 
+  const [size, setSize] = useState('14"');
+
   const handleBack = () => {
     navigation.goBack();
   };
 
+  const foodItems = [
+    {
+      itemName,
+      price: 64,
+      size,
+      qty: 2,
+    },
+  ];
+
   const handleNavigation = () => {
-    navigation.navigate('CartScreen');
+    navigation.navigate('CartScreen', {
+      foodItems,
+    });
   };
 
   return (
-    <ScrollView>
-      <View style={styles.root}>
+    <View style={styles.root}>
+      <ScrollView>
         <Image
           source={require('../../assets/images/restaurant1.png')}
           style={styles.restaurantImage}
@@ -54,7 +55,7 @@ export default function ItemDetailsScreen({route}: ItemDetailsScreenProps) {
             <SvgXml xml={icons.chevronLeft} />
           </TouchableOpacity>
           <View style={[styles.navContainer, styles.center]}>
-            <SvgXml xml={icons.like} />
+            <SvgXml xml={icons.like} onPress={handleNavigation} />
           </View>
         </View>
         <Spacer height={24} />
@@ -91,20 +92,53 @@ export default function ItemDetailsScreen({route}: ItemDetailsScreenProps) {
           <View style={[styles.row, styles.alignCenter]}>
             <Text style={styles.textLightGrey}>SIZE:</Text>
             <Spacer width={14} />
-            <View style={[styles.sizeCircle, styles.center]}>
-              <Text style={styles.textBlackBig}>10"</Text>
-            </View>
+            <TouchableOpacity
+              style={[
+                styles.sizeCircle,
+                styles.center,
+                size === '10"' && styles.selectedCircle,
+              ]}
+              onPress={() => setSize('10"')}>
+              <Text
+                style={[
+                  styles.textBlackBig,
+                  size === '10"' && styles.selectedSize,
+                ]}>
+                10"
+              </Text>
+            </TouchableOpacity>
             <Spacer width={10} />
-            <View
-              style={[styles.sizeCircle, styles.selectedCircle, styles.center]}>
-              <Text style={[styles.textBlackBig, styles.selectedSize]}>
+            <TouchableOpacity
+              style={[
+                styles.sizeCircle,
+                styles.center,
+                size === '14"' && styles.selectedCircle,
+              ]}
+              onPress={() => setSize('14"')}>
+              <Text
+                style={[
+                  styles.textBlackBig,
+                  size === '14"' && styles.selectedSize,
+                ]}>
                 14"
               </Text>
-            </View>
+            </TouchableOpacity>
             <Spacer width={10} />
-            <View style={[styles.sizeCircle, styles.center]}>
-              <Text style={styles.textBlackBig}>16"</Text>
-            </View>
+            <TouchableOpacity
+              style={[
+                styles.sizeCircle,
+                styles.center,
+                size === '16"' && styles.selectedCircle,
+              ]}
+              onPress={() => setSize('16"')}>
+              <Text
+                style={[
+                  styles.textBlackBig,
+                  size === '16"' && styles.selectedSize,
+                ]}>
+                16"
+              </Text>
+            </TouchableOpacity>
           </View>
           <Spacer height={20} />
           <Text style={styles.textDark}>INGRIDIENTS</Text>
@@ -126,35 +160,35 @@ export default function ItemDetailsScreen({route}: ItemDetailsScreenProps) {
               <SvgXml xml={icons.chilli} />
             </View>
           </View>
+          <Spacer height={10} />
         </View>
-        <Spacer height={20} />
-        <View style={styles.cartContainer}>
-          <View style={[styles.row, styles.spaceBetween, styles.alignCenter]}>
-            <Text style={styles.textBlackHuge}>$32</Text>
-            <View
-              style={[
-                styles.qtyContainer,
-                styles.row,
-                styles.spaceBetween,
-                styles.alignCenter,
-              ]}>
-              <View style={styles.changeQtyButton}>
-                <Text style={styles.textLightBold}>-</Text>
-              </View>
-              <Text style={styles.textLightBold}>2</Text>
-              <View style={styles.changeQtyButton}>
-                <Text style={styles.textLightBold}>+</Text>
-              </View>
+      </ScrollView>
+      <View style={styles.cartContainer}>
+        <View style={[styles.row, styles.spaceBetween, styles.alignCenter]}>
+          <Text style={styles.textBlackHuge}>$32</Text>
+          <View
+            style={[
+              styles.qtyContainer,
+              styles.row,
+              styles.spaceBetween,
+              styles.alignCenter,
+            ]}>
+            <View style={styles.changeQtyButton}>
+              <Text style={styles.textLightBold}>-</Text>
+            </View>
+            <Text style={styles.textLightBold}>{foodItems[0].qty}</Text>
+            <View style={styles.changeQtyButton}>
+              <Text style={styles.textLightBold}>+</Text>
             </View>
           </View>
-          <Spacer height={24} />
-          <TouchableOpacity
-            style={[styles.cartButton, styles.center]}
-            onPress={handleNavigation}>
-            <Text style={styles.textLightBold}>ADD TO CART</Text>
-          </TouchableOpacity>
         </View>
+        <Spacer height={24} />
+        <TouchableOpacity
+          style={[styles.cartButton, styles.center]}
+          onPress={handleNavigation}>
+          <Text style={styles.textLightBold}>ADD TO CART</Text>
+        </TouchableOpacity>
       </View>
-    </ScrollView>
+    </View>
   );
 }
