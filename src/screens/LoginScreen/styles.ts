@@ -3,8 +3,10 @@ import colors from '../../styles/colors';
 
 const styles = StyleSheet.create({
   root: {
-    flex: 1,
     backgroundColor: colors.bgDark,
+  },
+  flex1: {
+    flex: 1,
   },
   header: {
     height: '40%',
@@ -78,6 +80,12 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: colors.light,
+    fontSize: 14,
+    fontWeight: 700,
+    textAlign: 'center',
+  },
+  errorText: {
+    color: colors.labelPrimary,
     fontSize: 14,
     fontWeight: 700,
     textAlign: 'center',

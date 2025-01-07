@@ -1,5 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
-import * as React from 'react';
+import React, {useState} from 'react';
 import {
   ScrollView,
   Text,
@@ -8,21 +8,34 @@ import {
   View,
 } from 'react-native';
 import {SvgXml} from 'react-native-svg';
+import icons from '../../assets/icons';
 import Spacer from '../../components/Spacer';
 import {NavigationPropType} from '../../navigation/types';
-import icons from '../../assets/icons';
+import {emailRegex} from '../../utils/utils';
 import styles from './styles';
 
 export default function LoginScreen() {
   const navigation: NavigationPropType = useNavigation();
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showError, setShowError] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const error = 'Invalid email or password';
+
   const handleLogin = () => {
-    navigation.navigate('HomeScreen');
+    if (emailRegex.test(email) && email.length > 0 && password.length > 0) {
+      setShowError(false);
+      navigation.navigate('HomeScreen');
+    } else {
+      setShowError(true);
+    }
   };
 
   return (
     <ScrollView>
-      <View style={styles.root}>
+      <View style={[styles.root, styles.flex1]}>
         <View style={styles.header}>
           <Text style={styles.headerText}>Log In</Text>
           <Text style={styles.subheaderText}>
@@ -32,8 +45,10 @@ export default function LoginScreen() {
         <View style={styles.body}>
           <Text style={styles.labelDark}>EMAIL</Text>
           <TextInput
-            placeholder="example@gmail.com"
-            keyboardType="email-address"
+            value={email}
+            onChangeText={setEmail}
+            placeholder={'example@gmail.com'}
+            keyboardType={'email-address'}
             style={styles.input}
             autoCorrect={false}
           />
@@ -41,11 +56,19 @@ export default function LoginScreen() {
           <Text style={styles.labelDark}>PASSWORD</Text>
           <View style={[styles.inputContainer, styles.input]}>
             <TextInput
-              placeholder="* * * * * * * * * *"
+              value={password}
+              onChangeText={setPassword}
+              placeholder={'* * * * * * * * * *'}
               autoCorrect={false}
-              secureTextEntry={true}
+              secureTextEntry={!showPassword}
+              style={styles.flex1}
             />
-            <SvgXml xml={icons.eyeOpen} width={24} height={24} />
+            <SvgXml
+              xml={icons.eyeOpen}
+              width={24}
+              height={24}
+              onPress={() => setShowPassword(!showPassword)}
+            />
           </View>
           <Spacer height={24} />
           <View style={styles.forgotPasswordContainer}>
@@ -68,6 +91,7 @@ export default function LoginScreen() {
           <TouchableOpacity style={styles.button} onPress={handleLogin}>
             <Text style={styles.buttonText}>LOG IN</Text>
           </TouchableOpacity>
+          {showError && <Text style={styles.errorText}>{error}</Text>}
           <Spacer height={24} />
           <View style={styles.signupContainer}>
             <Text style={styles.labelDarkGrey}>Don't have an account?</Text>
