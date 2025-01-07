@@ -19,6 +19,8 @@ const colors = {
   chablish: '#FFEBE4',
   payneGrey: '#41414F',
   blackRock: '#2A2A39',
+  midnightExpress: '#111A2C',
+  brightGrey: '#525C67',
 };
 
 export default colors;

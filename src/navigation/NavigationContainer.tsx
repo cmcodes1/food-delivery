@@ -4,11 +4,12 @@ import {
 } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import * as React from 'react';
+import CartScreen from '../screens/CartScreen/CartScreen';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import ItemDetailsScreen from '../screens/ItemDetailsScreen/ItemDetailsScreen';
 import LoginScreen from '../screens/LoginScreen/LoginScreen';
 import RestaurantScreen from '../screens/RestaurantScreen/RestaurantScreen';
-import CartScreen from '../screens/CartScreen/CartScreen';
+import SummaryScreen from '../screens/SummaryScreen/SummaryScreen';
 
 const RootStack = createNativeStackNavigator({
   initialRouteName: 'LoginScreen',
@@ -30,6 +31,9 @@ const RootStack = createNativeStackNavigator({
     },
     CartScreen: {
       screen: CartScreen,
+    },
+    SummaryScreen: {
+      screen: SummaryScreen,
     },
   },
 });
