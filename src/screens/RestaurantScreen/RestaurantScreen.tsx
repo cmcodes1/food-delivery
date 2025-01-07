@@ -2,21 +2,11 @@ import {useNavigation} from '@react-navigation/native';
 import * as React from 'react';
 import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
+import icons from '../../assets/icons';
 import Spacer from '../../components/Spacer';
 import {NavigationPropType} from '../../navigation/types';
-import icons from '../../assets/icons';
 import styles from '../RestaurantScreen/styles';
-
-type RestaurantScreenProps = {
-  route: {
-    params: {
-      restaurantName: string;
-      rating: string;
-      deliveryCharge: string;
-      time: string;
-    };
-  };
-};
+import {RestaurantScreenProps} from './types';
 
 export default function RestaurantScreen({route}: RestaurantScreenProps) {
   const {restaurantName, rating, deliveryCharge, time} = route.params;
