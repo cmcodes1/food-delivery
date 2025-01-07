@@ -3,9 +3,9 @@ import * as React from 'react';
 import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import Spacer from '../../components/Spacer';
-import {NavigationPropType} from '../../navigation/types';
 import icons from '../../assets/icons';
 import styles from '../ItemDetailsScreen/styles';
+import {NavigationPropType} from '../../navigation/types';
 
 type ItemDetailsScreenProps = {
   route: {
@@ -30,7 +30,7 @@ export default function ItemDetailsScreen({route}: ItemDetailsScreenProps) {
   };
 
   const handleNavigation = () => {
-    navigation.navigate('CartScreen');
+    // navigation.navigate('CartScreen');
   };
 
   return (

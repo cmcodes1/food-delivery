@@ -22,7 +22,7 @@ export default function CartScreen() {
   };
 
   const handleNavigation = () => {
-    navigation.navigate('SummaryScreen');
+    // navigation.navigate('SummaryScreen');
   };
 
   return (

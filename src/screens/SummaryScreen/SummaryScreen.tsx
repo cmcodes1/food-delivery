@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
-import icons from '../../styles/icons';
+import icons from '../../assets/icons';
 import styles from '../SummaryScreen/styles';
 
 export default function SummaryScreen() {

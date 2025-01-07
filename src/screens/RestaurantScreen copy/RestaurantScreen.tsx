@@ -3,7 +3,6 @@ import * as React from 'react';
 import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import Spacer from '../../components/Spacer';
-import {NavigationPropType} from '../../navigation/types';
 import icons from '../../assets/icons';
 import styles from '../RestaurantScreen/styles';
 
@@ -21,20 +20,15 @@ type RestaurantScreenProps = {
 
 export default function RestaurantScreen({route}: RestaurantScreenProps) {
   const {restaurantName, rating, deliveryCharge, time} = route.params;
-  const navigation: NavigationPropType = useNavigation();
+
+  const navigation = useNavigation();
 
   const handleBack = () => {
     navigation.goBack();
   };
 
-  const handleNavigation = (itemName: string) => {
-    navigation.navigate('ItemDetailsScreen', {
-      itemName,
-      restaurantName,
-      rating,
-      deliveryCharge,
-      time,
-    });
+  const handleNavigation = () => {
+    navigation.navigate('ItemDetailsScreen');
   };
 
   return (
@@ -56,7 +50,7 @@ export default function RestaurantScreen({route}: RestaurantScreenProps) {
         </View>
         <Spacer height={24} />
         <Image
-          source={require('../../assets/images/restaurant1.png')}
+          source={require('../../assets/images/restaurant1.png')} // TODO: replace with restaurantImage
           style={styles.restaurantImage}
           resizeMode="contain"
         />
@@ -115,7 +109,7 @@ export default function RestaurantScreen({route}: RestaurantScreenProps) {
         <View style={[styles.row, styles.spaceBetween]}>
           <TouchableOpacity
             style={styles.foodContainer}
-            onPress={() => handleNavigation('Burger Ferguson')}>
+            onPress={() => handleNavigation()}>
             <Image
               source={require('../../assets/images/burger.jpg')}
               style={styles.foodImage}
@@ -133,9 +127,7 @@ export default function RestaurantScreen({route}: RestaurantScreenProps) {
               </TouchableOpacity>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.foodContainer}
-            onPress={() => handleNavigation("Rockin' Burgers")}>
+          <TouchableOpacity style={styles.foodContainer}>
             <Image
               source={require('../../assets/images/burger.jpg')}
               style={styles.foodImage}

@@ -11,7 +11,7 @@ import {
 import {SvgXml} from 'react-native-svg';
 import Spacer from '../../components/Spacer';
 import {NavigationPropType} from '../../navigation/types';
-import icons from '../../styles/icons';
+import icons from '../../assets/icons';
 import styles from '../HomeScreen/styles';
 
 export default function HomeScreen() {
