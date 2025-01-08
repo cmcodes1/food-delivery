@@ -34,4 +34,21 @@ const getTotalPrice = (updatedFoodItems: FoodItems) => {
   );
 };
 
-export {emailRegex, handleQty, getTotalPrice};
+const getImageSource = (foodImage: string) => {
+  switch (foodImage) {
+    case 'allFood':
+      return require('../assets/images/allFood.jpg');
+    case 'hotDog':
+      return require('../assets/images/hotDog.jpg');
+    case 'burger':
+      return require('../assets/images/burger.jpg');
+    case 'restaurant1':
+      return require('../assets/images/restaurant1.png');
+    case 'restaurant2':
+      return require('../assets/images/restaurant2.png');
+    default:
+      break;
+  }
+};
+
+export {emailRegex, handleQty, getTotalPrice, getImageSource};

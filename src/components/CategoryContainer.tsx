@@ -1,6 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import colors from '../styles/colors';
+import {getImageSource} from '../utils/utils';
 import Spacer from './Spacer';
 
 type CategoryContainerProps = {
@@ -14,19 +15,6 @@ export default function CategoryContainer({
   foodImage,
   foodName,
 }: CategoryContainerProps) {
-  const getImageSource = () => {
-    switch (foodImage) {
-      case 'allFood':
-        return require('../assets/images/allFood.jpg');
-      case 'hotDog':
-        return require('../assets/images/hotDog.jpg');
-      case 'burger':
-        return require('../assets/images/burger.jpg');
-      default:
-        break;
-    }
-  };
-
   return (
     <View
       style={[
@@ -35,7 +23,7 @@ export default function CategoryContainer({
       ]}>
       <View style={[styles.row, styles.alignCenter]}>
         <Image
-          source={getImageSource()}
+          source={getImageSource(foodImage)}
           style={styles.food}
           resizeMode="contain"
         />

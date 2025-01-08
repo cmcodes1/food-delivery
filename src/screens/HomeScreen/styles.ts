@@ -100,30 +100,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 400,
   },
-  restaurantImage: {
-    width: '100%',
-    height: 140,
-    borderRadius: 24,
-    borderWidth: 0.2,
-  },
-  textBlackBig: {
-    color: colors.blackRussian,
-    fontFamily: 'Sen',
-    fontSize: 20,
-    fontWeight: 400,
-  },
-  textBlackBold: {
-    color: colors.blackRussian,
-    fontFamily: 'Sen',
-    fontSize: 16,
-    fontWeight: 700,
-  },
-  textBlack: {
-    color: colors.blackRussian,
-    fontFamily: 'Sen',
-    fontSize: 14,
-    fontWeight: 400,
-  },
 });
 
 export default styles;

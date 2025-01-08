@@ -1,29 +1,14 @@
-import {useNavigation} from '@react-navigation/native';
 import * as React from 'react';
-import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import {ScrollView, Text, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import icons from '../../assets/icons';
-import Input from '../../components/Input';
-import Spacer from '../../components/Spacer';
-import {NavigationPropType} from '../../navigation/types';
-import styles from '../HomeScreen/styles';
 import CategoryContainer from '../../components/CategoryContainer';
+import Input from '../../components/Input';
+import RestaurantCard from '../../components/RestaurantCard';
+import Spacer from '../../components/Spacer';
+import styles from '../HomeScreen/styles';
 
 export default function HomeScreen() {
-  const navigation: NavigationPropType = useNavigation();
-  const handleNavigation = (
-    restaurantName: string,
-    rating: string,
-    deliveryCharge: string,
-    time: string,
-  ) => {
-    navigation.navigate('RestaurantScreen', {
-      restaurantName,
-      rating,
-      deliveryCharge,
-      time,
-    });
-  };
   return (
     <ScrollView>
       <View style={styles.root}>
@@ -102,83 +87,22 @@ export default function HomeScreen() {
           </View>
         </View>
         <Spacer height={20} />
-        <TouchableOpacity
-          onPress={() =>
-            handleNavigation('Rose Garden Restaurant', '4.7', 'Free', '20 min')
-          }>
-          <Image
-            source={require('../../assets/images/restaurant1.png')}
-            style={styles.restaurantImage}
-            resizeMode="contain"
-          />
-          <Spacer height={8} />
-          <Text style={styles.textBlackBig}>Rose Garden Restaurant</Text>
-          <Spacer height={5} />
-          <Text style={styles.textLightGrey}>
-            Burger - Chiken - Riche - Wings
-          </Text>
-          <Spacer height={14} />
-          <View style={styles.row}>
-            <View style={[styles.row, styles.alignCenter]}>
-              <SvgXml xml={icons.rating} />
-              <Spacer width={4} />
-              <Text style={styles.textBlackBold}>4.7</Text>
-            </View>
-            <Spacer width={24} />
-            <View style={[styles.row, styles.alignCenter]}>
-              <SvgXml xml={icons.delivery} />
-              <Spacer width={4} />
-              <Text style={styles.textBlack}>Free</Text>
-            </View>
-            <Spacer width={24} />
-            <View style={[styles.row, styles.alignCenter]}>
-              <SvgXml xml={icons.time} />
-              <Spacer width={4} />
-              <Text style={styles.textBlack}>20 min</Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-        <Spacer height={20} />
-        <TouchableOpacity
-          onPress={() =>
-            handleNavigation(
-              'American Spicy Burger Shop',
-              '4.3',
-              'Free',
-              '30 min',
-            )
-          }>
-          <Image
-            source={require('../../assets/images/restaurant2.png')}
-            style={styles.restaurantImage}
-            resizeMode="contain"
-          />
-          <Spacer height={8} />
-          <Text style={styles.textBlackBig}>American Spicy Burger Shop</Text>
-          <Spacer height={5} />
-          <Text style={styles.textLightGrey}>Burger - Chiken - Wings</Text>
-          <Spacer height={14} />
-          <View style={styles.row}>
-            <View style={[styles.row, styles.alignCenter]}>
-              <SvgXml xml={icons.rating} />
-              <Spacer width={4} />
-              <Text style={styles.textBlackBold}>4.3</Text>
-            </View>
-            <Spacer width={24} />
-            <View style={[styles.row, styles.alignCenter]}>
-              <SvgXml xml={icons.delivery} />
-              <Spacer width={4} />
-              <Text style={styles.textBlack}>Free</Text>
-            </View>
-            <Spacer width={24} />
-            <View style={[styles.row, styles.alignCenter]}>
-              <SvgXml xml={icons.time} />
-              <Spacer width={4} />
-              <Text style={styles.textBlack}>30 min</Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-        <Spacer height={20} />
+        <RestaurantCard
+          restaurantImage={'restaurant1'}
+          restaurantName={'Rose Garden Restaurant'}
+          description={'Burger - Chiken - Rice - Wings'}
+          rating={'4.7'}
+          deliveryCharge={'Free'}
+          time={'20 min'}
+        />
+        <RestaurantCard
+          restaurantImage={'restaurant2'}
+          restaurantName={'American Spicy Burger Shop'}
+          description={'Burger - Chiken - Wings'}
+          rating={'4.7'}
+          deliveryCharge={'Free'}
+          time={'20 min'}
+        />
       </View>
     </ScrollView>
   );
