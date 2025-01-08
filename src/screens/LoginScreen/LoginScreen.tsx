@@ -37,6 +37,10 @@ export default function LoginScreen() {
     <ScrollView>
       <View style={[styles.root, styles.flex1]}>
         <View style={styles.header}>
+          <View style={styles.bgIconsContainer}>
+            <SvgXml xml={icons.ellipse} />
+            <SvgXml xml={icons.vector} />
+          </View>
           <Text style={styles.headerText}>Log In</Text>
           <Text style={styles.subheaderText}>
             Please sign in to your existing account

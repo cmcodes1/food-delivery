@@ -3,7 +3,7 @@ import colors from '../../styles/colors';
 
 const styles = StyleSheet.create({
   root: {
-    backgroundColor: colors.bgDark,
+    backgroundColor: colors.bgBlackRussian,
   },
   flex1: {
     flex: 1,
@@ -12,12 +12,18 @@ const styles = StyleSheet.create({
     height: '40%',
     justifyContent: 'center',
   },
+  bgIconsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: -75,
+  },
   headerText: {
     color: colors.light,
     fontFamily: 'Sen',
     fontSize: 30,
     fontWeight: 700,
     textAlign: 'center',
+    marginTop: -230,
   },
   subheaderText: {
     color: colors.light,
