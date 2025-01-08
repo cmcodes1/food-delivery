@@ -1,17 +1,11 @@
 import {useNavigation} from '@react-navigation/native';
 import * as React from 'react';
-import {
-  Image,
-  ScrollView,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
+import icons from '../../assets/icons';
+import Input from '../../components/Input';
 import Spacer from '../../components/Spacer';
 import {NavigationPropType} from '../../navigation/types';
-import icons from '../../assets/icons';
 import styles from '../HomeScreen/styles';
 
 export default function HomeScreen() {
@@ -63,7 +57,7 @@ export default function HomeScreen() {
         <View style={styles.inputContainer}>
           <SvgXml xml={icons.search} />
           <Spacer width={12} />
-          <TextInput
+          <Input
             placeholder="Search dishes, restaurants"
             style={styles.searchInput}
           />

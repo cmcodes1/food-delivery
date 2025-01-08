@@ -1,15 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
-import {
-  Image,
-  ScrollView,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import icons from '../../assets/icons';
+import Input from '../../components/Input';
 import Spacer from '../../components/Spacer';
 import {NavigationPropType} from '../../navigation/types';
 import {getTotalPrice, handleQty} from '../../utils/utils';
@@ -120,9 +114,9 @@ export default function CartScreen({route}: {route: CartScreenRouteProp}) {
           </View>
           <Spacer height={10} />
           <View style={styles.deliveryAddress}>
-            <TextInput
-              placeholder="Add delivery address"
-              value="2118 Thornridge Cir. Syracuse"
+            <Input
+              placeholder={'Add delivery address'}
+              value={'2118 Thornridge Cir. Syracuse'}
               style={styles.inputDeliveryAddress}
             />
           </View>

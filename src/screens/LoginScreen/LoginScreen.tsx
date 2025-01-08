@@ -1,14 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
-import {
-  ScrollView,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import icons from '../../assets/icons';
+import Input from '../../components/Input';
 import Spacer from '../../components/Spacer';
 import {NavigationPropType} from '../../navigation/types';
 import {emailRegex} from '../../utils/utils';
@@ -48,7 +43,7 @@ export default function LoginScreen() {
         </View>
         <View style={styles.body}>
           <Text style={styles.blackRock2}>EMAIL</Text>
-          <TextInput
+          <Input
             value={email}
             onChangeText={setEmail}
             placeholder={'example@gmail.com'}
@@ -59,7 +54,7 @@ export default function LoginScreen() {
           <Spacer height={24} />
           <Text style={styles.blackRock2}>PASSWORD</Text>
           <View style={[styles.inputContainer, styles.input]}>
-            <TextInput
+            <Input
               value={password}
               onChangeText={setPassword}
               placeholder={'* * * * * * * * * *'}
