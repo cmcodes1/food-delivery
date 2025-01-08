@@ -44,7 +44,7 @@ export default function LoginScreen() {
         <View style={styles.body}>
           <Text style={styles.blackRock2}>EMAIL</Text>
           <Input
-            value={email}
+            value={email.toLowerCase()}
             onChangeText={setEmail}
             placeholder={'example@gmail.com'}
             keyboardType={'email-address'}
