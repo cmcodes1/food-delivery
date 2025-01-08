@@ -10,6 +10,7 @@ import {getTotalPrice, handleQty} from '../../utils/utils';
 import styles from '../CartScreen/styles';
 import {FoodItem, Index} from '../ItemDetailsScreen/types';
 import {CartScreenRouteProp} from './types';
+import Button from '../../components/Button';
 
 export default function CartScreen({route}: {route: CartScreenRouteProp}) {
   const [foodItems, setFoodItems] = useState(route.params.foodItems);
@@ -19,6 +20,12 @@ export default function CartScreen({route}: {route: CartScreenRouteProp}) {
 
   const handleBack = () => {
     navigation.goBack();
+  };
+
+  const handleQtyChange = (index: Index, change: 'increment' | 'decrement') => {
+    let updatedFoodItems = handleQty(foodItems, index, change);
+    setFoodItems(updatedFoodItems);
+    setTotalPrice(getTotalPrice(updatedFoodItems));
   };
 
   const handleNavigation = () => {
@@ -43,16 +50,14 @@ export default function CartScreen({route}: {route: CartScreenRouteProp}) {
               <View
                 style={[styles.row, styles.spaceBetween, styles.alignCenter]}>
                 <Image
-                  source={require('../../assets/images/pizza.png')}
+                  source={require('../../assets/images/burger.jpg')}
                   style={styles.itemImage}
                   resizeMode="contain"
                 />
                 <View>
                   <Text style={styles.textlightBig}>{item.itemName}</Text>
                   <Spacer height={10} />
-                  <Text style={styles.textlightBigBold}>
-                    ${Number(item.price) * Number(item.qty)}
-                  </Text>
+                  <Text style={styles.textlightBigBold}>${totalPrice}</Text>
                   <Spacer height={17} />
                   <View
                     style={[
@@ -72,29 +77,13 @@ export default function CartScreen({route}: {route: CartScreenRouteProp}) {
                       ]}>
                       <TouchableOpacity
                         style={styles.changeQtyButton}
-                        onPress={() => {
-                          let updatedFoodItems = handleQty(
-                            foodItems,
-                            index,
-                            'decrement',
-                          );
-                          setFoodItems(updatedFoodItems);
-                          setTotalPrice(getTotalPrice(updatedFoodItems));
-                        }}>
+                        onPress={() => handleQtyChange(index, 'decrement')}>
                         <Text style={styles.textLightBold}>-</Text>
                       </TouchableOpacity>
                       <Text style={styles.textLightBold}>{item.qty}</Text>
                       <TouchableOpacity
                         style={styles.changeQtyButton}
-                        onPress={() => {
-                          let updatedFoodItems = handleQty(
-                            foodItems,
-                            index,
-                            'increment',
-                          );
-                          setFoodItems(updatedFoodItems);
-                          setTotalPrice(getTotalPrice(updatedFoodItems));
-                        }}>
+                        onPress={() => handleQtyChange(index, 'increment')}>
                         <View style={styles.changeQtyButton}>
                           <Text style={styles.textLightBold}>+</Text>
                         </View>
@@ -135,11 +124,7 @@ export default function CartScreen({route}: {route: CartScreenRouteProp}) {
             </View>
           </View>
           <Spacer height={32} />
-          <TouchableOpacity
-            style={[styles.placeOrderButton, styles.center]}
-            onPress={handleNavigation}>
-            <Text style={styles.textLightSmallBold}>PLACE ORDER</Text>
-          </TouchableOpacity>
+          <Button title={'PLACE ORDER'} onPress={handleNavigation} />
         </View>
       </View>
     </ScrollView>

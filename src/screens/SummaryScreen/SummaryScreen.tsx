@@ -1,7 +1,9 @@
 import * as React from 'react';
-import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import {ScrollView, Text, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import icons from '../../assets/icons';
+import Button from '../../components/Button';
+import Spacer from '../../components/Spacer';
 import styles from '../SummaryScreen/styles';
 
 export default function SummaryScreen() {
@@ -21,9 +23,8 @@ export default function SummaryScreen() {
             enjoy our service!
           </Text>
         </View>
-        <TouchableOpacity style={[styles.trackOrderButton, styles.center]}>
-          <Text style={styles.textLightBold}>TRACK ORDER</Text>
-        </TouchableOpacity>
+        <Spacer height={200} />
+        <Button title={'TRACK ORDER'} onPress={() => null} />
       </View>
     </ScrollView>
   );

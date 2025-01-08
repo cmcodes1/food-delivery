@@ -84,6 +84,7 @@ export default function RestaurantScreen({route}: RestaurantScreenProps) {
         <Spacer height={20} />
         <View style={[styles.flexWrap, styles.row, styles.spaceBetween]}>
           <FoodCard
+            restaurantImage={restaurantImage}
             restaurantName={restaurantName}
             itemImage={'burger'}
             itemName={'Burger Ferguson'}
@@ -93,6 +94,7 @@ export default function RestaurantScreen({route}: RestaurantScreenProps) {
             time={time}
           />
           <FoodCard
+            restaurantImage={restaurantImage}
             restaurantName={restaurantName}
             itemImage={'burger'}
             itemName={'Burger Ferguson'}
@@ -102,15 +104,17 @@ export default function RestaurantScreen({route}: RestaurantScreenProps) {
             time={time}
           />
           <FoodCard
+            restaurantImage={restaurantImage}
             restaurantName={restaurantName}
             itemImage={'burger'}
             itemName={'Burger Ferguson'}
-            itemDescription={'Spicy restaurant'}
+            itemDescription={'Less spicy restaurant'}
             rating={rating}
             deliveryCharge={deliveryCharge}
             time={time}
           />
           <FoodCard
+            restaurantImage={restaurantImage}
             restaurantName={restaurantName}
             itemImage={'burger'}
             itemName={'Burger Ferguson'}

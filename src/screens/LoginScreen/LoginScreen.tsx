@@ -20,8 +20,7 @@ export default function LoginScreen() {
   const error = 'Invalid email or password';
 
   const handleLogin = () => {
-    // if (emailRegex.test(email) && email.length > 0 && password.length > 0) {
-    if (true) {
+    if (emailRegex.test(email) && email.length > 0 && password.length > 0) {
       setShowError(false);
       navigation.navigate('HomeScreen');
     } else {

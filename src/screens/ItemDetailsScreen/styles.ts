@@ -61,7 +61,6 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: 400,
   },
-
   cartContainer: {
     backgroundColor: colors.aliceBlue,
     borderTopLeftRadius: 24,
@@ -95,11 +94,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Sen',
     fontSize: 28,
     fontWeight: 400,
-  },
-  cartButton: {
-    backgroundColor: colors.pumpkin,
-    height: 62,
-    borderRadius: 12,
   },
   textLightGrey: {
     color: colors.mischka,

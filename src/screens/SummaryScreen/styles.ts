@@ -21,19 +21,6 @@ const styles = StyleSheet.create({
     fontWeight: 700,
     marginBottom: 16,
   },
-  trackOrderButton: {
-    height: 62,
-    width: '100%',
-    borderRadius: 12,
-    backgroundColor: colors.pumpkin,
-    marginTop: 200,
-  },
-  textLightBold: {
-    color: colors.white,
-    fontFamily: 'Sen',
-    fontSize: 16,
-    fontWeight: 700,
-  },
   textBrightGrey: {
     color: colors.brightGrey,
     opacity: 0.6,

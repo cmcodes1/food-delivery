@@ -9,6 +9,7 @@ import {getImageSource} from '../utils/utils';
 import Spacer from './Spacer';
 
 type FoodCardProps = {
+  restaurantImage: string;
   restaurantName: string;
   itemImage: string;
   itemName: string;
@@ -19,6 +20,7 @@ type FoodCardProps = {
 };
 
 export default function FoodCard({
+  restaurantImage,
   restaurantName,
   itemImage,
   itemName,
@@ -32,6 +34,7 @@ export default function FoodCard({
   const handleNavigation = () => {
     navigation.navigate('ItemDetailsScreen', {
       itemName,
+      restaurantImage,
       restaurantName,
       rating,
       deliveryCharge,

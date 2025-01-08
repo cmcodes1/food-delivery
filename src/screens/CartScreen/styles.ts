@@ -112,17 +112,6 @@ const styles = StyleSheet.create({
   textDecorationNone: {
     textDecorationLine: 'none',
   },
-  placeOrderButton: {
-    height: 62,
-    borderRadius: 12,
-    backgroundColor: colors.pumpkin,
-  },
-  textLightSmallBold: {
-    color: colors.white,
-    fontFamily: 'Sen',
-    fontSize: 14,
-    fontWeight: 700,
-  },
 });
 
 export default styles;

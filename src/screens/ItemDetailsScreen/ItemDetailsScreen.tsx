@@ -2,16 +2,25 @@ import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
+import icons from '../../assets/icons';
+import Button from '../../components/Button';
+import IngridientContainer from '../../components/IngridientContainer';
+import SizeContainer from '../../components/SizeContainer';
 import Spacer from '../../components/Spacer';
 import {NavigationPropType} from '../../navigation/types';
-import icons from '../../assets/icons';
+import {getImageSource} from '../../utils/utils';
 import styles from '../ItemDetailsScreen/styles';
 import {ItemDetailsScreenProps} from './types';
-import SizeContainer from '../../components/SizeContainer';
-import IngridientContainer from '../../components/IngridientContainer';
 
 export default function ItemDetailsScreen({route}: ItemDetailsScreenProps) {
-  const {itemName, restaurantName, rating, deliveryCharge, time} = route.params;
+  const {
+    itemName,
+    restaurantImage,
+    restaurantName,
+    rating,
+    deliveryCharge,
+    time,
+  } = route.params;
 
   const navigation: NavigationPropType = useNavigation();
 
@@ -40,7 +49,7 @@ export default function ItemDetailsScreen({route}: ItemDetailsScreenProps) {
     <View style={styles.root}>
       <ScrollView>
         <Image
-          source={require('../../assets/images/restaurant1.png')}
+          source={getImageSource(restaurantImage)}
           style={styles.restaurantImage}
           resizeMode="contain"
         />
@@ -146,11 +155,7 @@ export default function ItemDetailsScreen({route}: ItemDetailsScreenProps) {
           </View>
         </View>
         <Spacer height={24} />
-        <TouchableOpacity
-          style={[styles.cartButton, styles.center]}
-          onPress={handleNavigation}>
-          <Text style={styles.textLightBold}>ADD TO CART</Text>
-        </TouchableOpacity>
+        <Button title={'ADD TO CART'} onPress={handleNavigation} />
       </View>
     </View>
   );

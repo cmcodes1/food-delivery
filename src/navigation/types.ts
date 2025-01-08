@@ -14,6 +14,7 @@ type NavigationParamList = {
   };
   ItemDetailsScreen: {
     itemName: string;
+    restaurantImage: string;
     restaurantName: string;
     rating: string;
     deliveryCharge: string;
