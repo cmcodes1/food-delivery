@@ -4,7 +4,7 @@ import colors from '../../styles/colors';
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    backgroundColor: colors.light,
+    backgroundColor: colors.white,
     paddingTop: 50,
     paddingHorizontal: 24,
   },
@@ -25,12 +25,12 @@ const styles = StyleSheet.create({
     height: 44,
     width: 44,
     borderRadius: 22,
-    backgroundColor: colors.bgSolitude,
+    backgroundColor: colors.solitude,
     justifyContent: 'center',
     alignItems: 'center',
   },
   textBlackBig: {
-    color: colors.bgBlackRussian,
+    color: colors.blackRussian,
     fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 400,
@@ -48,13 +48,13 @@ const styles = StyleSheet.create({
     fontWeight: 400,
   },
   textBlackBold: {
-    color: colors.bgBlackRussian,
+    color: colors.blackRussian,
     fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 700,
   },
   textBlack: {
-    color: colors.bgBlackRussian,
+    color: colors.blackRussian,
     fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 400,
@@ -72,13 +72,13 @@ const styles = StyleSheet.create({
     borderWidth: 0,
   },
   textLight: {
-    color: colors.light,
+    color: colors.white,
     fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 400,
   },
   textBlackHuge: {
-    color: colors.bgBlackRussian,
+    color: colors.blackRussian,
     fontFamily: 'Sen',
     fontSize: 20,
     fontWeight: 400,
@@ -94,13 +94,13 @@ const styles = StyleSheet.create({
     width: '90%',
   },
   textDarkBold: {
-    color: colors.labelDark,
+    color: colors.blackRock2,
     fontFamily: 'Sen',
     fontSize: 15,
     fontWeight: 700,
   },
   textDarkGrey: {
-    color: colors.labelDarkGrey,
+    color: colors.comet,
     fontFamily: 'Sen',
     fontSize: 13,
     fontWeight: 400,

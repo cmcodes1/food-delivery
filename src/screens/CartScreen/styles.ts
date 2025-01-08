@@ -4,7 +4,7 @@ import colors from '../../styles/colors';
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    backgroundColor: colors.bgBlackRussian,
+    backgroundColor: colors.blackRussian,
   },
   header: {
     paddingHorizontal: 24,
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.2,
   },
   textPrimaryLine: {
-    color: colors.labelPrimary,
+    color: colors.pumpkin,
     textDecorationLine: 'underline',
     fontFamily: 'Sen',
     fontSize: 14,
@@ -43,13 +43,13 @@ const styles = StyleSheet.create({
     borderRadius: 25,
   },
   textlightBig: {
-    color: colors.light,
+    color: colors.white,
     fontFamily: 'Sen',
     fontSize: 18,
     fontWeight: 400,
   },
   textlightBigBold: {
-    color: colors.light,
+    color: colors.white,
     fontFamily: 'Sen',
     fontSize: 20,
     fontWeight: 700,
@@ -58,14 +58,14 @@ const styles = StyleSheet.create({
     opacity: 0.5,
   },
   qtyContainer: {
-    backgroundColor: colors.bgBlackRussian,
+    backgroundColor: colors.blackRussian,
     width: 125,
     height: 48,
     borderRadius: 50,
     padding: 12,
   },
   textLightBold: {
-    color: colors.light,
+    color: colors.white,
     fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 700,
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   cartContainer: {
-    backgroundColor: colors.bgTextInput,
+    backgroundColor: colors.aliceBlue,
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
     padding: 24,
@@ -95,16 +95,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     borderWidth: 0.2,
     borderRadius: 10,
-    backgroundColor: colors.bgTextInput,
+    backgroundColor: colors.aliceBlue,
     justifyContent: 'center',
     marginBottom: 30,
   },
   inputDeliveryAddress: {
-    color: colors.labelDark,
+    color: colors.blackRock2,
     opacity: 0.5,
   },
   textBlackHuge: {
-    color: colors.bgBlackRussian,
+    color: colors.blackRussian,
     fontFamily: 'Sen',
     fontSize: 30,
     fontWeight: 400,
@@ -115,10 +115,10 @@ const styles = StyleSheet.create({
   placeOrderButton: {
     height: 62,
     borderRadius: 12,
-    backgroundColor: colors.labelPrimary,
+    backgroundColor: colors.pumpkin,
   },
   textLightSmallBold: {
-    color: colors.light,
+    color: colors.white,
     fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 700,

@@ -47,7 +47,7 @@ export default function LoginScreen() {
           </Text>
         </View>
         <View style={styles.body}>
-          <Text style={styles.labelDark}>EMAIL</Text>
+          <Text style={styles.blackRock2}>EMAIL</Text>
           <TextInput
             value={email}
             onChangeText={setEmail}
@@ -57,7 +57,7 @@ export default function LoginScreen() {
             autoCorrect={false}
           />
           <Spacer height={24} />
-          <Text style={styles.labelDark}>PASSWORD</Text>
+          <Text style={styles.blackRock2}>PASSWORD</Text>
           <View style={[styles.inputContainer, styles.input]}>
             <TextInput
               value={password}
@@ -83,11 +83,11 @@ export default function LoginScreen() {
                 height={24}
                 style={styles.checkbox}
               />
-              <Text style={[styles.labelDark, styles.labelGrey]}>
+              <Text style={[styles.blackRock2, styles.lightSlateGrey]}>
                 Remeber me
               </Text>
             </View>
-            <Text style={[styles.labelDark, styles.labelPrimary]}>
+            <Text style={[styles.blackRock2, styles.pumpkin]}>
               Forgot Password
             </Text>
           </View>
@@ -98,12 +98,12 @@ export default function LoginScreen() {
           {showError && <Text style={styles.errorText}>{error}</Text>}
           <Spacer height={24} />
           <View style={styles.signupContainer}>
-            <Text style={styles.labelDarkGrey}>Don't have an account?</Text>
+            <Text style={styles.comet}>Don't have an account?</Text>
             <Spacer width={10} />
             <Text style={styles.labelPrimaryBold}>SIGN UP</Text>
           </View>
           <Spacer height={24} />
-          <Text style={[styles.labelDarkGrey, styles.textAlignCenter]}>Or</Text>
+          <Text style={[styles.comet, styles.textAlignCenter]}>Or</Text>
           <Spacer height={24} />
           <View style={styles.socialContainer}>
             <SvgXml xml={icons.facebook} width={62} height={62} />

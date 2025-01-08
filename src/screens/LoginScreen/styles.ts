@@ -3,7 +3,7 @@ import colors from '../../styles/colors';
 
 const styles = StyleSheet.create({
   root: {
-    backgroundColor: colors.bgBlackRussian,
+    backgroundColor: colors.blackRussian,
   },
   flex1: {
     flex: 1,
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     marginTop: -75,
   },
   headerText: {
-    color: colors.light,
+    color: colors.white,
     fontFamily: 'Sen',
     fontSize: 30,
     fontWeight: 700,
@@ -26,15 +26,15 @@ const styles = StyleSheet.create({
     marginTop: -230,
   },
   subheaderText: {
-    color: colors.light,
+    color: colors.white,
     fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 400,
     textAlign: 'center',
     marginTop: 3,
   },
-  labelDark: {
-    color: colors.labelDark,
+  blackRock2: {
+    color: colors.blackRock2,
     fontFamily: 'Sen',
     fontSize: 13,
     fontWeight: 400,
@@ -45,14 +45,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   input: {
-    backgroundColor: colors.bgTextInput,
+    backgroundColor: colors.aliceBlue,
     height: 62,
     borderRadius: 10,
     paddingHorizontal: 19,
     marginTop: 8,
   },
   body: {
-    backgroundColor: colors.light,
+    backgroundColor: colors.white,
     height: '120%',
     padding: 24,
     borderTopLeftRadius: 24,
@@ -70,12 +70,12 @@ const styles = StyleSheet.create({
   checkbox: {
     marginRight: 10,
   },
-  labelGrey: {
-    color: colors.labelGrey,
+  lightSlateGrey: {
+    color: colors.lightSlateGrey,
     textAlign: 'left',
   },
-  labelPrimary: {
-    color: colors.labelPrimary,
+  pumpkin: {
+    color: colors.pumpkin,
     fontFamily: 'Sen',
     fontSize: 14,
     textAlign: 'right',
@@ -83,20 +83,20 @@ const styles = StyleSheet.create({
   button: {
     height: 62,
     width: '100%',
-    backgroundColor: colors.labelPrimary,
+    backgroundColor: colors.pumpkin,
     borderRadius: 12,
     justifyContent: 'center',
     alignSelf: 'center',
   },
   buttonText: {
-    color: colors.light,
+    color: colors.white,
     fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 700,
     textAlign: 'center',
   },
   errorText: {
-    color: colors.labelPrimary,
+    color: colors.pumpkin,
     fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 700,
@@ -107,14 +107,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
   },
-  labelDarkGrey: {
-    color: colors.labelDarkGrey,
+  comet: {
+    color: colors.comet,
     fontFamily: 'Sen',
     fontSize: 13,
     fontWeight: 400,
   },
   labelPrimaryBold: {
-    color: colors.labelPrimary,
+    color: colors.pumpkin,
     fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 700,

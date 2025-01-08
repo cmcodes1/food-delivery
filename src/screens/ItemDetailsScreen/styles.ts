@@ -4,7 +4,7 @@ import colors from '../../styles/colors';
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    backgroundColor: colors.light,
+    backgroundColor: colors.white,
   },
   restaurantImage: {
     width: '100%',
@@ -37,20 +37,20 @@ const styles = StyleSheet.create({
     height: 44,
     width: 44,
     borderRadius: 22,
-    backgroundColor: colors.light,
+    backgroundColor: colors.white,
     borderWidth: 0.2,
   },
   body: {
     paddingHorizontal: 24,
   },
   textBlackHugeBold: {
-    color: colors.bgBlackRussian,
+    color: colors.blackRussian,
     fontFamily: 'Sen',
     fontSize: 20,
     fontWeight: 700,
   },
   textBlack: {
-    color: colors.bgBlackRussian,
+    color: colors.blackRussian,
     fontFamily: 'Sen',
     fontSize: 14,
     fontWeight: 400,
@@ -59,23 +59,23 @@ const styles = StyleSheet.create({
     height: 48,
     width: 48,
     borderRadius: 24,
-    backgroundColor: colors.bgTextInput,
+    backgroundColor: colors.aliceBlue,
   },
   selectedCircle: {
     backgroundColor: colors.carrotOrange,
   },
   textBlackBig: {
-    color: colors.bgBlackRussian,
+    color: colors.blackRussian,
     fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 400,
   },
   selectedSize: {
-    color: colors.light,
+    color: colors.white,
     fontWeight: 700,
   },
   textDark: {
-    color: colors.labelDark,
+    color: colors.blackRock2,
     fontFamily: 'Sen',
     fontSize: 13,
     fontWeight: 400,
@@ -87,21 +87,21 @@ const styles = StyleSheet.create({
     backgroundColor: colors.chablish,
   },
   cartContainer: {
-    backgroundColor: colors.bgTextInput,
+    backgroundColor: colors.aliceBlue,
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
     paddingVertical: 20,
     paddingHorizontal: 24,
   },
   qtyContainer: {
-    backgroundColor: colors.bgBlackRussian,
+    backgroundColor: colors.blackRussian,
     width: 125,
     height: 48,
     borderRadius: 50,
     padding: 12,
   },
   textLightBold: {
-    color: colors.light,
+    color: colors.white,
     fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 700,
@@ -115,13 +115,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   textBlackHuge: {
-    color: colors.bgBlackRussian,
+    color: colors.blackRussian,
     fontFamily: 'Sen',
     fontSize: 28,
     fontWeight: 400,
   },
   cartButton: {
-    backgroundColor: colors.labelPrimary,
+    backgroundColor: colors.pumpkin,
     height: 62,
     borderRadius: 12,
   },
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     fontWeight: 400,
   },
   textBlackBold: {
-    color: colors.bgBlackRussian,
+    color: colors.blackRussian,
     fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 700,

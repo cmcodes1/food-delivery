@@ -4,7 +4,7 @@ import colors from '../../styles/colors';
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    backgroundColor: colors.light,
+    backgroundColor: colors.white,
     paddingHorizontal: 24,
     paddingBottom: 34,
     justifyContent: 'space-between',
@@ -25,11 +25,11 @@ const styles = StyleSheet.create({
     height: 62,
     width: '100%',
     borderRadius: 12,
-    backgroundColor: colors.labelPrimary,
+    backgroundColor: colors.pumpkin,
     marginTop: 200,
   },
   textLightBold: {
-    color: colors.light,
+    color: colors.white,
     fontFamily: 'Sen',
     fontSize: 16,
     fontWeight: 700,
