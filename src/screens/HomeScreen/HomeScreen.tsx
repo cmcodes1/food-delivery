@@ -7,6 +7,7 @@ import Input from '../../components/Input';
 import Spacer from '../../components/Spacer';
 import {NavigationPropType} from '../../navigation/types';
 import styles from '../HomeScreen/styles';
+import CategoryContainer from '../../components/CategoryContainer';
 
 export default function HomeScreen() {
   const navigation: NavigationPropType = useNavigation();
@@ -74,46 +75,21 @@ export default function HomeScreen() {
         <Spacer height={20} />
         <ScrollView horizontal={true}>
           <View style={[styles.row, styles.alignCenter]}>
-            <View
-              style={[
-                styles.categoryContainer,
-                styles.selectedCategoryContainer,
-              ]}>
-              <View style={[styles.row, styles.alignCenter]}>
-                <Image
-                  source={require('../../assets/images/allFood.jpg')}
-                  style={styles.food}
-                  resizeMode="contain"
-                />
-                <Spacer width={12} />
-                <Text style={styles.textDarkBold}>All</Text>
-              </View>
-            </View>
-            <Spacer width={20} />
-            <View style={styles.categoryContainer}>
-              <View style={[styles.row, styles.alignCenter]}>
-                <Image
-                  source={require('../../assets/images/hotDog.jpg')}
-                  style={styles.food}
-                  resizeMode="contain"
-                />
-                <Spacer width={12} />
-                <Text style={styles.textDarkBold}>Hot Dog</Text>
-              </View>
-            </View>
-            <Spacer width={20} />
-            <View style={styles.categoryContainer}>
-              <View style={[styles.row, styles.alignCenter]}>
-                <Image
-                  source={require('../../assets/images/burger.jpg')}
-                  style={styles.food}
-                  resizeMode="contain"
-                />
-                <Spacer width={12} />
-                <Text style={styles.textDarkBold}>Burger</Text>
-              </View>
-            </View>
-            <Spacer width={20} />
+            <CategoryContainer
+              isSelected={true}
+              foodImage={'allFood'}
+              foodName={'All'}
+            />
+            <CategoryContainer
+              isSelected={false}
+              foodImage={'hotDog'}
+              foodName={'Hot Dog'}
+            />
+            <CategoryContainer
+              isSelected={false}
+              foodImage={'burger'}
+              foodName={'Burger'}
+            />
           </View>
         </ScrollView>
         <Spacer height={32} />

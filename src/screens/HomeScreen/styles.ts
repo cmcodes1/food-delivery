@@ -100,26 +100,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 400,
   },
-  categoryContainer: {
-    padding: 8,
-    height: 60,
-    borderRadius: 50,
-    borderWidth: 0.2,
-  },
-  selectedCategoryContainer: {
-    backgroundColor: colors.salomie,
-  },
-  food: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
-  },
-  textDarkBold: {
-    color: colors.blackRock2,
-    fontFamily: 'Sen',
-    fontSize: 14,
-    fontWeight: 700,
-  },
   restaurantImage: {
     width: '100%',
     height: 140,
