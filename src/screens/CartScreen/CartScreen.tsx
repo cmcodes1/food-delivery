@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import icons from '../../assets/icons';
+import Button from '../../components/Button';
 import Input from '../../components/Input';
 import Spacer from '../../components/Spacer';
 import {NavigationPropType} from '../../navigation/types';
@@ -10,7 +11,6 @@ import {getTotalPrice, handleQty} from '../../utils/utils';
 import styles from '../CartScreen/styles';
 import {FoodItem, Index} from '../ItemDetailsScreen/types';
 import {CartScreenRouteProp} from './types';
-import Button from '../../components/Button';
 
 export default function CartScreen({route}: {route: CartScreenRouteProp}) {
   const [foodItems, setFoodItems] = useState(route.params.foodItems);
