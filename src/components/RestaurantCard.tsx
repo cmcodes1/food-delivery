@@ -29,6 +29,7 @@ export default function RestaurantCard({
 
   const handleNavigation = () => {
     navigation.navigate('RestaurantScreen', {
+      restaurantImage,
       restaurantName,
       rating,
       deliveryCharge,

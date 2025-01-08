@@ -21,6 +21,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  flexWrap: {
+    flexWrap: 'wrap',
+  },
   navContainer: {
     height: 44,
     width: 44,
@@ -59,24 +62,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: 400,
   },
-  itemContainer: {
-    height: 46,
-    borderRadius: 33,
-    paddingHorizontal: 20,
-    borderWidth: 2,
-    borderColor: colors.whisper,
-    marginRight: 10,
-  },
-  selectedItem: {
-    backgroundColor: colors.carrotOrange,
-    borderWidth: 0,
-  },
-  textLight: {
-    color: colors.white,
-    fontFamily: 'Sen',
-    fontSize: 16,
-    fontWeight: 400,
-  },
   textBlackHuge: {
     color: colors.blackRussian,
     fontFamily: 'Sen',
@@ -84,32 +69,9 @@ const styles = StyleSheet.create({
     fontWeight: 400,
   },
   foodContainer: {
-    width: '45%',
-    padding: 12,
-    borderWidth: 0.2,
-    borderRadius: 10,
-  },
-  foodImage: {
-    height: 80,
-    width: '90%',
-  },
-  textDarkBold: {
-    color: colors.blackRock2,
-    fontFamily: 'Sen',
-    fontSize: 15,
-    fontWeight: 700,
-  },
-  textDarkGrey: {
-    color: colors.comet,
-    fontFamily: 'Sen',
-    fontSize: 13,
-    fontWeight: 400,
-  },
-  plusContainer: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
-    backgroundColor: colors.carrotOrange,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
   },
 });
 

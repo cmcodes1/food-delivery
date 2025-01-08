@@ -6,6 +6,7 @@ type NavigationParamList = {
   LoginScreen: undefined;
   HomeScreen: undefined;
   RestaurantScreen: {
+    restaurantImage: string;
     restaurantName: string;
     rating: string;
     deliveryCharge: string;

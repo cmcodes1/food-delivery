@@ -3,27 +3,21 @@ import * as React from 'react';
 import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import icons from '../../assets/icons';
+import FoodCard from '../../components/FoodCard';
+import FoodContainer from '../../components/FoodContainer';
 import Spacer from '../../components/Spacer';
 import {NavigationPropType} from '../../navigation/types';
+import {getImageSource} from '../../utils/utils';
 import styles from '../RestaurantScreen/styles';
 import {RestaurantScreenProps} from './types';
 
 export default function RestaurantScreen({route}: RestaurantScreenProps) {
-  const {restaurantName, rating, deliveryCharge, time} = route.params;
+  const {restaurantImage, restaurantName, rating, deliveryCharge, time} =
+    route.params;
   const navigation: NavigationPropType = useNavigation();
 
   const handleBack = () => {
     navigation.goBack();
-  };
-
-  const handleNavigation = (itemName: string) => {
-    navigation.navigate('ItemDetailsScreen', {
-      itemName,
-      restaurantName,
-      rating,
-      deliveryCharge,
-      time,
-    });
   };
 
   return (
@@ -45,7 +39,7 @@ export default function RestaurantScreen({route}: RestaurantScreenProps) {
         </View>
         <Spacer height={24} />
         <Image
-          source={require('../../assets/images/restaurant1.png')}
+          source={getImageSource(restaurantImage)}
           style={styles.restaurantImage}
           resizeMode="contain"
         />
@@ -79,71 +73,53 @@ export default function RestaurantScreen({route}: RestaurantScreenProps) {
         <Spacer height={32} />
         <ScrollView horizontal={true}>
           <View style={[styles.row, styles.spaceBetween]}>
-            <View
-              style={[
-                styles.itemContainer,
-                styles.center,
-                styles.selectedItem,
-              ]}>
-              <Text style={styles.textLight}>Burger</Text>
-            </View>
-            <View style={[styles.itemContainer, styles.center]}>
-              <Text style={styles.textBlackBig}>Sandwich</Text>
-            </View>
-            <View style={[styles.itemContainer, styles.center]}>
-              <Text style={styles.textBlackBig}>Pizza</Text>
-            </View>
-            <View style={[styles.itemContainer, styles.center]}>
-              <Text style={styles.textBlackBig}>Noodles</Text>
-            </View>
+            <FoodContainer isSelected={true} foodName={'Burger'} />
+            <FoodContainer isSelected={false} foodName={'Sandwich'} />
+            <FoodContainer isSelected={false} foodName={'Pizza'} />
+            <FoodContainer isSelected={false} foodName={'Noodles'} />
           </View>
         </ScrollView>
         <Spacer height={32} />
         <Text style={styles.textBlackHuge}>Burger (10)</Text>
         <Spacer height={20} />
-        <View style={[styles.row, styles.spaceBetween]}>
-          <TouchableOpacity
-            style={styles.foodContainer}
-            onPress={() => handleNavigation('Burger Ferguson')}>
-            <Image
-              source={require('../../assets/images/burger.jpg')}
-              style={styles.foodImage}
-              resizeMode="contain"
-            />
-            <Spacer height={5} />
-            <Text style={styles.textDarkBold}>Burger Ferguson</Text>
-            <Spacer height={5} />
-            <Text style={styles.textDarkGrey}>Spicy restaurant</Text>
-            <Spacer height={2} />
-            <View style={[styles.row, styles.spaceBetween, styles.alignCenter]}>
-              <Text style={styles.textBlackBold}>$40</Text>
-              <TouchableOpacity style={[styles.plusContainer, styles.center]}>
-                <SvgXml xml={icons.plus} />
-              </TouchableOpacity>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.foodContainer}
-            onPress={() => handleNavigation("Rockin' Burgers")}>
-            <Image
-              source={require('../../assets/images/burger.jpg')}
-              style={styles.foodImage}
-              resizeMode="contain"
-            />
-            <Spacer height={5} />
-            <Text style={styles.textDarkBold}>Rockin' Burgers</Text>
-            <Spacer height={5} />
-            <Text style={styles.textDarkGrey}>Cafecafachino</Text>
-            <Spacer height={2} />
-            <View style={[styles.row, styles.spaceBetween, styles.alignCenter]}>
-              <Text style={styles.textBlackBold}>$40</Text>
-              <TouchableOpacity style={[styles.plusContainer, styles.center]}>
-                <SvgXml xml={icons.plus} />
-              </TouchableOpacity>
-            </View>
-          </TouchableOpacity>
+        <View style={[styles.flexWrap, styles.row, styles.spaceBetween]}>
+          <FoodCard
+            restaurantName={restaurantName}
+            itemImage={'burger'}
+            itemName={'Burger Ferguson'}
+            itemDescription={'Spicy restaurant'}
+            rating={rating}
+            deliveryCharge={deliveryCharge}
+            time={time}
+          />
+          <FoodCard
+            restaurantName={restaurantName}
+            itemImage={'burger'}
+            itemName={'Burger Ferguson'}
+            itemDescription={'Cafecafachino'}
+            rating={rating}
+            deliveryCharge={deliveryCharge}
+            time={time}
+          />
+          <FoodCard
+            restaurantName={restaurantName}
+            itemImage={'burger'}
+            itemName={'Burger Ferguson'}
+            itemDescription={'Spicy restaurant'}
+            rating={rating}
+            deliveryCharge={deliveryCharge}
+            time={time}
+          />
+          <FoodCard
+            restaurantName={restaurantName}
+            itemImage={'burger'}
+            itemName={'Burger Ferguson'}
+            itemDescription={'Cafecafachino'}
+            rating={rating}
+            deliveryCharge={deliveryCharge}
+            time={time}
+          />
         </View>
-        <Spacer height={250} />
       </View>
     </ScrollView>
   );
