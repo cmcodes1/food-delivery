@@ -7,6 +7,8 @@ import {NavigationPropType} from '../../navigation/types';
 import icons from '../../assets/icons';
 import styles from '../ItemDetailsScreen/styles';
 import {ItemDetailsScreenProps} from './types';
+import SizeContainer from '../../components/SizeContainer';
+import IngridientContainer from '../../components/IngridientContainer';
 
 export default function ItemDetailsScreen({route}: ItemDetailsScreenProps) {
   const {itemName, restaurantName, rating, deliveryCharge, time} = route.params;
@@ -91,75 +93,36 @@ export default function ItemDetailsScreen({route}: ItemDetailsScreenProps) {
           <Spacer height={20} />
           <View style={[styles.row, styles.alignCenter]}>
             <Text style={styles.textLightGrey}>SIZE:</Text>
+            <Spacer width={16} />
+            <SizeContainer
+              isSelected={size === '10"'}
+              size={'10"'}
+              setSize={() => setSize('10"')}
+            />
+            <SizeContainer
+              isSelected={size === '14"'}
+              size={'14"'}
+              setSize={() => setSize('14"')}
+            />
+            <SizeContainer
+              isSelected={size === '16"'}
+              size={'16"'}
+              setSize={() => setSize('16"')}
+            />
             <Spacer width={14} />
-            <TouchableOpacity
-              style={[
-                styles.sizeCircle,
-                styles.center,
-                size === '10"' && styles.selectedCircle,
-              ]}
-              onPress={() => setSize('10"')}>
-              <Text
-                style={[
-                  styles.textBlackBig,
-                  size === '10"' && styles.selectedSize,
-                ]}>
-                10"
-              </Text>
-            </TouchableOpacity>
-            <Spacer width={10} />
-            <TouchableOpacity
-              style={[
-                styles.sizeCircle,
-                styles.center,
-                size === '14"' && styles.selectedCircle,
-              ]}
-              onPress={() => setSize('14"')}>
-              <Text
-                style={[
-                  styles.textBlackBig,
-                  size === '14"' && styles.selectedSize,
-                ]}>
-                14"
-              </Text>
-            </TouchableOpacity>
-            <Spacer width={10} />
-            <TouchableOpacity
-              style={[
-                styles.sizeCircle,
-                styles.center,
-                size === '16"' && styles.selectedCircle,
-              ]}
-              onPress={() => setSize('16"')}>
-              <Text
-                style={[
-                  styles.textBlackBig,
-                  size === '16"' && styles.selectedSize,
-                ]}>
-                16"
-              </Text>
-            </TouchableOpacity>
           </View>
           <Spacer height={20} />
           <Text style={styles.textDark}>INGRIDIENTS</Text>
           <Spacer height={20} />
-          <View style={[styles.row, styles.alignCenter, styles.spaceBetween]}>
-            <View style={[styles.ingridientCircle, styles.center]}>
-              <SvgXml xml={icons.salt} />
-            </View>
-            <View style={[styles.ingridientCircle, styles.center]}>
-              <SvgXml xml={icons.chicken} />
-            </View>
-            <View style={[styles.ingridientCircle, styles.center]}>
-              <SvgXml xml={icons.onion} />
-            </View>
-            <View style={[styles.ingridientCircle, styles.center]}>
-              <SvgXml xml={icons.garlic} />
-            </View>
-            <View style={[styles.ingridientCircle, styles.center]}>
-              <SvgXml xml={icons.chilli} />
-            </View>
-          </View>
+          <ScrollView
+            horizontal={true}
+            contentContainerStyle={[styles.row, styles.alignCenter]}>
+            <IngridientContainer icon={icons.salt} />
+            <IngridientContainer icon={icons.chicken} />
+            <IngridientContainer icon={icons.onion} />
+            <IngridientContainer icon={icons.garlic} />
+            <IngridientContainer icon={icons.chilli} />
+          </ScrollView>
           <Spacer height={10} />
         </View>
       </ScrollView>

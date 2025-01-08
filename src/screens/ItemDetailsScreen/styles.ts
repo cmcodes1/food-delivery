@@ -55,37 +55,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: 400,
   },
-  sizeCircle: {
-    height: 48,
-    width: 48,
-    borderRadius: 24,
-    backgroundColor: colors.aliceBlue,
-  },
-  selectedCircle: {
-    backgroundColor: colors.carrotOrange,
-  },
-  textBlackBig: {
-    color: colors.blackRussian,
-    fontFamily: 'Sen',
-    fontSize: 16,
-    fontWeight: 400,
-  },
-  selectedSize: {
-    color: colors.white,
-    fontWeight: 700,
-  },
   textDark: {
     color: colors.blackRock2,
     fontFamily: 'Sen',
     fontSize: 13,
     fontWeight: 400,
   },
-  ingridientCircle: {
-    height: 50,
-    width: 50,
-    borderRadius: 25,
-    backgroundColor: colors.chablish,
-  },
+
   cartContainer: {
     backgroundColor: colors.aliceBlue,
     borderTopLeftRadius: 24,
